@@ -1,0 +1,194 @@
+.header {
+    background-color: #d3d3d3; /* Bright grey background */
+    padding: 20px;
+    position: relative;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    box-sizing: border-box; /* Include padding in the element's total width/height */
+    overflow: hidden; /* Prevent content from overflowing */
+  }
+  
+  /* .header-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333; 
+  } */
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Dark grey for contrast */
+    margin-bottom: 10px;
+  }
+
+  .overlay-box {
+    user-select: none;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    width: 100%;
+    background-color: rgba(94, 91, 91, 0.799);  /* White box with transparency */
+    border-radius: 0;  /* No need for round corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    box-sizing: border-box; /* Include padding/borders in the width */
+}
+
+/* .overlay-box p {
+    margin: 10px 0 0;
+    font-size: 1rem;
+    color: #555;
+} */
+
+/* Hamburger Button Styles */
+.LPhamburger {
+    display: none; /* Hidden on larger screens */
+    position: absolute;
+    top: 4px; /* Align with the top of the screen or overlay box */
+    right: 25px; /* Adjust spacing from the right edge */
+    height: 9%; /* Match the height of the overlay box */
+    flex-direction: column;
+    justify-content: center; /* Center bars vertically */
+    gap: 7px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100; /* Ensure it appears on top of the overlay box */
+    padding: 15px;
+  }
+  
+  .LPhamburger .bar {
+    width:35px;
+    height: 7px;
+    background-color: rgba(255, 255, 255, 0.799);
+    border-radius: 2px;
+    z-index: 100;
+    transition: all 0.3s ease;
+  }
+
+  .main-nav {
+    user-select: none;
+    position: absolute;
+    top: 23px;
+    left:18%;
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    gap: 14px;
+    list-style: none;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-around; /* Spread items evenly */
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .main-nav ul li {
+    margin: 0 40px;
+  }
+  
+  .main-nav ul li a {
+    font-family: 'Ysabeau SC';
+    color: white;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    display: inline-block; /* Ensure the hover effect spans the entire text */
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+  
+  .main-nav ul li a {
+    font-family: 'Ysabeau SC';
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  
+  .main-nav ul li a:hover {
+    color: rgba(94, 91, 91, 0.799); /* Color on hover */
+    box-shadow: inset 200px 0 0 0 white; /* Animation effect */
+    padding: 0 .25rem;
+    margin: 0 -.25rem;
+  }
+  
+/* Responsive Navigation for Smaller Screens */
+@media (max-width: 768px) {
+    .main-nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #d3d3d3;
+      z-index: 10;
+      text-align: center;
+    }
+  
+    .main-nav.open {
+      display: flex;
+    }
+  
+    .LPhamburger {
+      display: block; /* Visible on smaller screens */
+    }
+  }
+
+  .LP_Slider {
+    position: relative;
+    width: 100%; /* Full width slider */
+    height: 60%; /* Occupy 60% of the header height */
+    background: #333; /* Fallback background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure no overflow */
+  }
+  
+  .slider-image {
+    width: 100%; /* Fill the slider width */
+    height: 100%; /* Fill the slider height */
+    object-fit: cover; /* Ensure images are cropped to fit without distortion */
+    transition: opacity 1s ease-in-out; /* Smooth transition between images */
+  }
+  
+  .LP_Slider h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    z-index: 1; /* Ensure text appears above the image */
+    text-align: center;
+  }
+
+  /* Responsive Slider Text */
+@media (max-width: 768px) {
+    .LP_Slider h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* General Utility Classes */
+  .hidden {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+  }
