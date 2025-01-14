@@ -1,16 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
+
 .header {
     /* background-color: #d3d3d3;  */
     background: url('./assets/LPBackground1.jpg') center center/cover no-repeat;
-    height: clamp(60rem, 70vw, 90rem);
-    width: auto;
+    position : relative;/* Make the header container relative */
+    height: 100vh;  /* Full viewport height */
+    width: 100%;    /* Ensure full width */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    object-fit: contain;
-    box-sizing: border-box; /* Include padding/borders in the width */
+    box-sizing: border-box;
   }
   
+/* Add overlay using pseudo-element */
+.header::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); /* White overlay with opacity */
+    z-index:0 /* Make sure overlay is under the content */
+  }
+  
+
   /* .header-title {
     font-size: 24px;
     font-weight: bold;
@@ -26,18 +41,18 @@
     margin-bottom: 10px;
   }
 
+
+
   .overlay-box {
     user-select: none;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    padding: 40px;
+    position: relative;
     width: 100%;
-    background-color: rgba(94, 91, 91, 0.799);  /* White box with transparency */
-    border-radius: 0;  /* No need for round corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
-    box-sizing: border-box; /* Include padding/borders in the width */
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background-color: #c6c4c4; /* Bright grey color */
 }
 
 /* .overlay-box p {
@@ -72,40 +87,36 @@
     transition: all 0.3s ease;
   }
 
+  @media (max-width: 840px) {
+    .LPhamburger {
+        display: flex; /* Show hamburger on smaller screens */
+     }
+   }
+
   .main-nav {
-    user-select: none;
-    position: absolute;
-    top: 23px;
-    left:18%;
     display: flex;
-    align-items: center;
-    margin-left: 70px;
+    align-items: center; /* Align items vertically */
+    gap: 40px; /* Add spacing between nav items */
   }
   
   .main-nav ul {
     display: flex;
-    gap: 14px;
     list-style: none;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    justify-content: space-around; /* Spread items evenly */
-    padding: 0px;
-    margin: 0px;
+    margin: 0;
+    padding: 0;
   }
   
   .main-nav ul li {
-    margin: 0 40px;
+    margin: 0 20px;
   }
   
   .main-nav ul li a {
     font-family: 'Ysabeau SC';
     color: white;
-    position: relative;
     text-decoration: none;
-    text-align: center;
-    font-size: 0.8rem;
-    font-weight: 400;
-    display: inline-block; /* Ensure the hover effect spans the entire text */
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
   }
   
   .main-nav ul li a {
@@ -123,38 +134,60 @@
     margin: 0 -.25rem;
   }
   
+
 /* Responsive Navigation for Smaller Screens */
 @media (max-width: 768px) {
-    .main-nav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #d3d3d3;
-      z-index: 10;
-      text-align: center;
-    }
-  
-    .main-nav.open {
-      display: flex;
-    }
-  
-    .LPhamburger {
-      display: block; /* Visible on smaller screens */
-    }
+ .overlay-box {
+    flex-direction: column; /* Stack logo and nav on smaller screens */
+    align-items: center;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.9);
+    z-index: 10;
+    text-align: center;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .LPhamburger {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    z-index: 20;
+  }
+  }
+
+  .promotions-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #000000; /* Adjust as needed */
+    margin-bottom: 10px; /* Add some spacing below the title */
+    text-align: relative;
+    margin-top: 150px; /* Move the slider down by 50px */
+    left: 10%; /* Matches the slider's horizontal alignment (adjust as needed) */
   }
 
   .LP_Slider {
-    position: relative;
-    width: 100%; /* Full width slider */
-    height: 60%; /* Occupy 60% of the header height */
-    background: #333; /* Fallback background color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Ensure no overflow */
+  position: relative;
+  width: 80%; /* Full width slider */
+  height: 250px; /* Fixed height for the slider box (you can adjust this value) */
+  background: #333; /* Fallback background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure no overflow */
+  box-sizing: border-box; /* Prevent any padding or borders from affecting the layout */
+  border-radius: 8px; /* Optional: add rounded corners to make it a box */
   }
   
   .slider-image {
@@ -166,14 +199,16 @@
   
   .LP_Slider h1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
+    top: 0px;  /* Adjust the distance from the top */
+    left: 5px; /* Adjust the distance from the left */
+    background-color: white; /* White background */
+    color: #333; /* Dark text color for better visibility */
+    font-size: 1.5rem; /* Adjust font size as needed */
     font-weight: bold;
-    color: #fff;
-    z-index: 1; /* Ensure text appears above the image */
-    text-align: center;
+    padding: 5px 10px; /* Add padding around the text */
+    z-index: 1; /* Ensure it appears above the image */
+    border-radius: 5px; /* Optional: add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: add a subtle shadow */
   }
 
   /* Responsive Slider Text */
@@ -191,3 +226,79 @@
   .visible {
     display: block;
   }
+
+ /* Categories Section */
+.categories-section {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .categories-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .category-box {
+    display: flex;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-image {
+    width: 40%;
+    object-fit: cover;
+    border-right: 1px solid #ddd;
+  }
+  
+  .category-details {
+    padding: 20px;
+    text-align: left;
+    flex: 1;
+  }
+  
+  .category-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .category-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #666;
+  }
+  
+  .category-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #c6c4c4;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-button:hover {
+    background-color: #a2aca7;
+  } 
