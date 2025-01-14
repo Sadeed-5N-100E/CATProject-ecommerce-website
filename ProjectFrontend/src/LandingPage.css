@@ -1,15 +1,14 @@
 .header {
-    background-color: #d3d3d3; /* Bright grey background */
-    padding: 20px;
-    position: relative;
-    width: 100%; /* Full width */
-    height: 100vh; /* Full viewport height */
+    /* background-color: #d3d3d3;  */
+    background: url('./assets/LPBackground1.jpg') center center/cover no-repeat;
+    height: clamp(60rem, 70vw, 90rem);
+    width: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    box-sizing: border-box; /* Include padding in the element's total width/height */
-    overflow: hidden; /* Prevent content from overflowing */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    object-fit: contain;
+    box-sizing: border-box; /* Include padding/borders in the width */
   }
   
   /* .header-title {
