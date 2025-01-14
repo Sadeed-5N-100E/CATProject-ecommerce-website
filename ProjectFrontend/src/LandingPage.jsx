@@ -2,7 +2,7 @@ import React, { useState ,useEffect} from 'react';
 import "./LandingPage.css";
 import promo1 from "./assets/Promo1.jpg";
 import promo2 from "./assets/Promo2.jpg";
-import promo3 from "./assets/promo3.jpg";
+// import promo3 from "./assets/promo3.jpg";
 import HBP from "./assets/HBPCategory.jpg";
 import Dia from "./assets/DiaCategory.jpg";
 import Cough from "./assets/CoughCategory.jpg";
@@ -21,7 +21,7 @@ const LandingPage = () => {
    // Array of slider images
    const slides = [
     {
-      image: [promo3], // Replace with your image paths
+      image: [promo2], // Replace with your image paths
       title: "88% Max discount start form 14 Jan",
     },
     {
@@ -121,5 +121,3 @@ const LandingPage = () => {
       </>
   )
 }
-
-export default LandingPage
