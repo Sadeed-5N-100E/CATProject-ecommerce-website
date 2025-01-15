@@ -21,7 +21,7 @@ const LandingPage = () => {
    // Array of slider images
    const slides = [
     {
-      image: [promo2], // Replace with your image paths
+      image: [promo1], // Replace with your image paths
       title: "88% Max discount start form 14 Jan",
     },
     {
