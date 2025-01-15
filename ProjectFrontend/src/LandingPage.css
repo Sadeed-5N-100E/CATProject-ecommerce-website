@@ -65,7 +65,7 @@
 .LPhamburger {
     display: none; /* Hidden on larger screens */
     position: absolute;
-    top: 4px; /* Align with the top of the screen or overlay box */
+    top: 100px; /* Align with the top of the screen or overlay box */
     right: 25px; /* Adjust spacing from the right edge */
     height: 9%; /* Match the height of the overlay box */
     flex-direction: column;
@@ -74,16 +74,16 @@
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 100; /* Ensure it appears on top of the overlay box */
+    z-index: 101; /* Ensure it appears on top of the overlay box */
     padding: 15px;
   }
   
   .LPhamburger .bar {
     width:35px;
-    height: 7px;
+    height: 8px;
     background-color: rgba(255, 255, 255, 0.799);
     border-radius: 2px;
-    z-index: 100;
+    z-index: 101;
     transition: all 0.3s ease;
   }
 
@@ -159,11 +159,11 @@
   }
 
   .LPhamburger {
-    display: block;
+    display: flex;
     position: absolute;
     top: 10px;
     right: 25px;
-    z-index: 20;
+    z-index: 120;
   }
   }
 
@@ -173,7 +173,7 @@
     color: #000000; /* Adjust as needed */
     margin-bottom: 10px; /* Add some spacing below the title */
     text-align: relative;
-    margin-top: 150px; /* Move the slider down by 50px */
+    margin-top: 80px; /* Move the slider down by 50px */
     left: 10%; /* Matches the slider's horizontal alignment (adjust as needed) */
   }
 
@@ -216,16 +216,17 @@
     .LP_Slider h1 {
       font-size: 1.5rem;
     }
+
   }
   
   /* General Utility Classes */
-  .hidden {
+   .hidden {
     display: none;
   }
   
   .visible {
     display: block;
-  }
+  } 
 
  /* Categories Section */
 .categories-section {
