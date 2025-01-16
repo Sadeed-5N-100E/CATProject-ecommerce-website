@@ -1,0 +1,180 @@
+{
+    "products": [
+        {
+            "id": "PR001",
+            "category": "painRelievers",
+            "name": "Acetaminophen Extra Strength",
+            "brand": "HealthPlus",
+            "price": 9.99,
+            "dosageForm": "tablet",
+            "quantity": 50,
+            "strength": "500mg",
+            "image": "/images/PR001.jpg"
+        },
+        {
+            "id": "PR002",
+            "category": "painRelievers",
+            "name": "Ibuprofen",
+            "brand": "PainAway",
+            "price": 12.99,
+            "dosageForm": "capsule",
+            "quantity": 30,
+            "strength": "200mg",
+            "image": "/images/PR002.jpg"
+        },
+        {
+            "id": "CF001",
+            "category": "coldAndFlu",
+            "name": "Cold Relief Plus",
+            "brand": "FluGuard",
+            "price": 15.99,
+            "dosageForm": "syrup",
+            "quantity": "120ml",
+            "activeIngredients": ["dextromethorphan", "phenylephrine"],
+            "image": "/images/CF001.jpg"
+        },
+        {
+            "id": "CF002",
+            "category": "coldAndFlu",
+            "name": "Cough Suppressant",
+            "brand": "BreathEasy",
+            "price": 8.99,
+            "dosageForm": "liquid",
+            "quantity": "90ml",
+            "type": "non-drowsy",
+            "image": "/images/CF002.jpg"
+        },
+        {
+            "id": "DH001",
+            "category": "digestiveHealth",
+            "name": "Antacid Maximum Strength",
+            "brand": "DigestCare",
+            "price": 7.99,
+            "dosageForm": "tablet",
+            "quantity": 60,
+            "flavor": "mint",
+            "image": "/images/DH001.jpg"
+        },
+        {
+            "id": "DH002",
+            "category": "digestiveHealth",
+            "name": "Probiotic Daily",
+            "brand": "GutHealth",
+            "price": 19.99,
+            "dosageForm": "capsule",
+            "quantity": 30,
+            "strainCount": "10 billion CFU",
+            "image": "/images/DH002.jpg"
+        },
+        {
+            "id": "FA001",
+            "category": "firstAid",
+            "name": "Antiseptic Solution",
+            "brand": "SafeHeal",
+            "price": 6.99,
+            "quantity": "100ml",
+            "type": "topical",
+            "activeIngredient": "hydrogen peroxide",
+            "image": "/images/FA001.jpg"
+        },
+        {
+            "id": "FA002",
+            "category": "firstAid",
+            "name": "Burn Relief Gel",
+            "brand": "CoolMend",
+            "price": 11.99,
+            "quantity": "50g",
+            "type": "gel",
+            "application": "external use",
+            "image": "/images/FA002.jpg"
+        },
+        {
+            "id": "PR003",
+            "category": "painRelievers",
+            "name": "Naproxen Sodium",
+            "brand": "PainFree",
+            "price": 14.99,
+            "dosageForm": "tablet",
+            "quantity": 40,
+            "strength": "220mg",
+            "image": "/images/PR003.jpg"
+        },
+        {
+            "id": "PR004",
+            "category": "painRelievers",
+            "name": "Aspirin",
+            "brand": "ReliefPlus",
+            "price": 7.99,
+            "dosageForm": "tablet",
+            "quantity": 100,
+            "strength": "325mg",
+            "image": "/images/PR004.jpg"
+        },
+        {
+            "id": "CF003",
+            "category": "coldAndFlu",
+            "name": "Night Time Cold Relief",
+            "brand": "SleepWell",
+            "price": 13.99,
+            "dosageForm": "capsule",
+            "quantity": 24,
+            "activeIngredients": ["diphenhydramine", "acetaminophen"],
+            "image": "/images/CF003.jpg"
+        },
+        {
+            "id": "CF004",
+            "category": "coldAndFlu",
+            "name": "Sinus Relief",
+            "brand": "ClearBreath",
+            "price": 11.99,
+            "dosageForm": "spray",
+            "quantity": "30ml",
+            "type": "nasal decongestant",
+            "image": "/images/CF004.jpg"
+        },
+        {
+            "id": "DH003",
+            "category": "digestiveHealth",
+            "name": "Fiber Supplement",
+            "brand": "RegularCare",
+            "price": 16.99,
+            "dosageForm": "powder",
+            "quantity": "30 servings",
+            "flavor": "orange",
+            "image": "/images/DH003.jpg"
+        },
+        {
+            "id": "DH004",
+            "category": "digestiveHealth",
+            "name": "Gas Relief",
+            "brand": "TummyEase",
+            "price": 8.99,
+            "dosageForm": "chewable",
+            "quantity": 40,
+            "flavor": "peppermint",
+            "image": "/images/DH004.jpg"
+        },
+        {
+            "id": "FA003",
+            "category": "firstAid",
+            "name": "Adhesive Bandages",
+            "brand": "QuickHeal",
+            "price": 5.99,
+            "quantity": "50 pieces",
+            "type": "waterproof",
+            "size": "assorted",
+            "image": "/images/FA003.jpg"
+        },
+        {
+            "id": "FA004",
+            "category": "firstAid",
+            "name": "First Aid Cream",
+            "brand": "WoundGuard",
+            "price": 9.99,
+            "quantity": "30g",
+            "type": "antibiotic",
+            "application": "topical",
+            "image": "/images/FA004.jpg"
+        }
+    ]
+}
