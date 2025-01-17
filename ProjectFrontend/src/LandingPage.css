@@ -179,8 +179,8 @@
 
   .LP_Slider {
   position: relative;
-  width: 80%; /* Full width slider */
-  height: 250px; /* Fixed height for the slider box (you can adjust this value) */
+  width: 90%; /* Full width slider */
+  height: 400px; /* Fixed height for the slider box (you can adjust this value) */
   background: #333; /* Fallback background color */
   display: flex;
   align-items: center;
