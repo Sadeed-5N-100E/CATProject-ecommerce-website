@@ -21,6 +21,7 @@ const MedicineCard = ({ medicine }) => {
           <p>Category: {medicine.category}</p>
           <p>Dosage: {medicine.dosage}</p>
           <p>Brand: {medicine.brand}</p>
+          <p>Quantity: {medicine.number}</p>
           <p>Price: ${medicine.price}</p>
           <div className="quantity-control">
             <button onClick={decreaseQuantity}>-</button>
@@ -47,6 +48,7 @@ const AddcartPage = () => {
           brand: 'HealthCare',
           price: 10,
           image: promo2,
+          number: "30 / pax",
         },
         {
           name: 'Ibuprofen',
@@ -55,6 +57,7 @@ const AddcartPage = () => {
           brand: 'MediSafe',
           price: 12,
           image: Dia,
+          number: "30 / pax",
         },
         {
           name: 'Amoxicillin',
@@ -63,6 +66,7 @@ const AddcartPage = () => {
           brand: 'PharmaPlus',
           price: 15,
           image: Asp,
+          number: "30 / pax",
         },
         {
           name: 'Cetirizine',
@@ -71,6 +75,7 @@ const AddcartPage = () => {
           brand: 'AllerCare',
           price: 8,
           image: Asp,
+          number: "30 / pax",
         },
         {
             name: 'Cetirizine',
@@ -79,6 +84,7 @@ const AddcartPage = () => {
             brand: 'AllerCare',
             price: 8,
             image: Asp,
+            number: "30 / pax",
           },
           {
             name: 'Cetirizine',
@@ -87,6 +93,7 @@ const AddcartPage = () => {
             brand: 'AllerCare',
             price: 8,
             image: Asp,
+            number: "30 / pax",
           },
       ];
   return (
