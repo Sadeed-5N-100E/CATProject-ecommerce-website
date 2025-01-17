@@ -28,7 +28,7 @@
     position: fixed; /* Change to absolute positioning */
     top: 10%;
     padding: 20px;
-    height: 76vh;
+    height: 150vh;
     width: 65vw; /* Change from vh to vw to scale responsively */
     border-radius: 50px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

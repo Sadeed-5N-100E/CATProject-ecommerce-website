@@ -8,7 +8,6 @@ import Dia from "./assets/DiaCategory.jpg";
 import Cough from "./assets/CoughCategory.jpg";
 import HF from "./assets/HFCategory.jpg";
 
-
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -16,7 +15,6 @@ const LandingPage = () => {
   const toggleMenu = () => {
   setIsMenuOpen(!isMenuOpen);
   };
-
 
    // Array of slider images
    const slides = [
@@ -32,7 +30,7 @@ const LandingPage = () => {
 
   const categories = [
     {
-      image: HBP,
+      image: promo1,
       title: "High Blood Pessure",
       description: "High Blood Pressure Description",
       link: "/AddcartPage",

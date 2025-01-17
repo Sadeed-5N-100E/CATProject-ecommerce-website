@@ -196,18 +196,17 @@
     left: 10%; /* Matches the slider's horizontal alignment (adjust as needed) */
 }
 
-.LP_Slider {
-    position: relative;
-    width: 80%; /* Full width slider */
-    height: 250px; /* Fixed height for the slider box (you can adjust this value) */
-    background: #333; /* Fallback background color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Ensure no overflow */
-    box-sizing: border-box; /* Prevent any padding or borders from affecting the layout */
-    border-radius: 8px; /* Optional: add rounded corners to make it a box */
-  }
+  .LP_Slider {
+  position: relative;
+  width: 90%; /* Full width slider */
+  height: 400px; /* Fixed height for the slider box (you can adjust this value) */
+  background: #333; /* Fallback background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure no overflow */
+  box-sizing: border-box; /* Prevent any padding or borders from affecting the layout */
+  border-radius: 8px; /* Optional: add rounded corners to make it a box */}
   
 .slider-image {
     width: 100%; /* Fill the slider width */
