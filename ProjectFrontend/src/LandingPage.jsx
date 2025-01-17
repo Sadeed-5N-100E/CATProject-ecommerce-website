@@ -7,6 +7,7 @@ import HBP from "./assets/HBPCategory.jpg";
 import Dia from "./assets/DiaCategory.jpg";
 import Cough from "./assets/CoughCategory.jpg";
 import HF from "./assets/HFCategory.jpg";
+
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,7 +15,6 @@ const LandingPage = () => {
   const toggleMenu = () => {
   setIsMenuOpen(!isMenuOpen);
   };
-
 
    // Array of slider images
    const slides = [
