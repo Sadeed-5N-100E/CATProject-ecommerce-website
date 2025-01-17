@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
 
-.header {
+.Lheader {
     /* background-color: #d3d3d3;  */
     background: url('./assets/LPBackground1.jpg') center center/cover no-repeat;
     position : relative;/* Make the header container relative */
@@ -14,7 +14,7 @@
   }
   
 /* Add overlay using pseudo-element */
-.header::before {
+.Lheader::before {
     content: ''; /* Required for pseudo-elements */
     position: absolute;
     top: 0;
@@ -34,25 +34,71 @@
     color: #333; 
   } */
 
-  .logo {
-    font-size: 24px;
+.logo {
+    font-size: 36px;
     font-weight: bold;
-    color: #333; /* Dark grey for contrast */
+    color: #ffffff; /* Dark grey for contrast */
     margin-bottom: 10px;
-  }
+}
 
-
-
-  .overlay-box {
+.overlay-box {
     user-select: none;
-    position: relative;
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-between; /* Space between logo and nav */
     align-items: center;
     padding: 20px 40px;
     box-sizing: border-box;
-    background-color: #c6c4c4; /* Bright grey color */
+    z-index:100;
+    background-color: #494949; /* Bright grey color */
+}
+
+.main-nav {
+  user-select: none;
+  border-style: ridge;
+  background-color: #333;
+  height: 7%;
+  border-radius: 5px;
+  position: fixed;
+  right: 1%;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 40px; /* Add spacing between nav items */
+  margin-right: 2px;
+  z-index:100;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-around; /* Spread items evenly */
+}
+
+.main-nav ul li {
+  margin: 0 20px;
+}
+
+.main-nav ul li a {
+  font-family: 'Ysabeau SC';
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.main-nav ul li a:hover {
+  color: rgba(0, 0, 0, 0.799); /* Color on hover */
+  box-shadow: inset 200px 0 0 0 white; /* Animation effect */
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
 }
 
 /* .overlay-box p {
@@ -65,9 +111,7 @@
 .LPhamburger {
     display: none; /* Hidden on larger screens */
     position: absolute;
-    top: 100px; /* Align with the top of the screen or overlay box */
     right: 25px; /* Adjust spacing from the right edge */
-    height: 9%; /* Match the height of the overlay box */
     flex-direction: column;
     justify-content: center; /* Center bars vertically */
     gap: 7px;
@@ -75,69 +119,24 @@
     border: none;
     cursor: pointer;
     z-index: 101; /* Ensure it appears on top of the overlay box */
-    padding: 15px;
-  }
+    padding: 12px;
+}
   
-  .LPhamburger .bar {
+.LPhamburger .bar {
     width:35px;
-    height: 8px;
+    height: 3px;
     background-color: rgba(255, 255, 255, 0.799);
+    border-style: ridge;
     border-radius: 2px;
     z-index: 101;
     transition: all 0.3s ease;
-  }
+}
 
-  @media (max-width: 840px) {
-    .LPhamburger {
-        display: flex; /* Show hamburger on smaller screens */
-     }
-   }
-
-  .main-nav {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    gap: 40px; /* Add spacing between nav items */
-  }
-  
-  .main-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .main-nav ul li {
-    margin: 0 20px;
-  }
-  
-  .main-nav ul li a {
-    font-family: 'Ysabeau SC';
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    transition: color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .main-nav ul li a {
-    font-family: 'Ysabeau SC';
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 1.5;
-  }
-  
-  .main-nav ul li a:hover {
-    color: rgba(94, 91, 91, 0.799); /* Color on hover */
-    box-shadow: inset 200px 0 0 0 white; /* Animation effect */
-    padding: 0 .25rem;
-    margin: 0 -.25rem;
-  }
-  
 
 /* Responsive Navigation for Smaller Screens */
+
 @media (max-width: 768px) {
- .overlay-box {
+  .overlay-box {
     flex-direction: column; /* Stack logo and nav on smaller screens */
     align-items: center;
   }
@@ -149,7 +148,28 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: rgba(211, 211, 211, 0.9);
+    height: 45px;
+    background-color: #333;
+    z-index: 10;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay-box {
+    flex-direction: column; /* Stack logo and nav on smaller screens */
+    align-items: center;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #333;
     z-index: 10;
     text-align: center;
   }
@@ -160,22 +180,21 @@
 
   .LPhamburger {
     display: flex;
-    position: absolute;
     top: 10px;
     right: 25px;
     z-index: 120;
   }
-  }
+}
 
-  .promotions-title {
+.promotions-title {
     font-size: 4rem;
     font-weight: bold;
     color: #000000; /* Adjust as needed */
     margin-bottom: 10px; /* Add some spacing below the title */
     text-align: relative;
-    margin-top: 80px; /* Move the slider down by 50px */
+    margin-top: 200px; /* Move the slider down by 50px */
     left: 10%; /* Matches the slider's horizontal alignment (adjust as needed) */
-  }
+}
 
   .LP_Slider {
   position: relative;
@@ -188,16 +207,27 @@
   overflow: hidden; /* Ensure no overflow */
   box-sizing: border-box; /* Prevent any padding or borders from affecting the layout */
   border-radius: 8px; /* Optional: add rounded corners to make it a box */
+.LP_Slider {
+    position: relative;
+    width: 80%; /* Full width slider */
+    height: 250px; /* Fixed height for the slider box (you can adjust this value) */
+    background: #333; /* Fallback background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure no overflow */
+    box-sizing: border-box; /* Prevent any padding or borders from affecting the layout */
+    border-radius: 8px; /* Optional: add rounded corners to make it a box */
   }
   
-  .slider-image {
+.slider-image {
     width: 100%; /* Fill the slider width */
     height: 100%; /* Fill the slider height */
     object-fit: cover; /* Ensure images are cropped to fit without distortion */
     transition: opacity 1s ease-in-out; /* Smooth transition between images */
-  }
+}
   
-  .LP_Slider h1 {
+.LP_Slider h1 {
     position: absolute;
     top: 0px;  /* Adjust the distance from the top */
     left: 5px; /* Adjust the distance from the left */
@@ -209,7 +239,7 @@
     z-index: 1; /* Ensure it appears above the image */
     border-radius: 5px; /* Optional: add rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: add a subtle shadow */
-  }
+}
 
   /* Responsive Slider Text */
 @media (max-width: 768px) {
@@ -217,7 +247,7 @@
       font-size: 1.5rem;
     }
 
-  }
+}
   
   /* General Utility Classes */
    .hidden {

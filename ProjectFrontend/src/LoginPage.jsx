@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import "./LoginPage.css"
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <div className="LoginBG">
+      <article className="LoginArticle">
+        <h1>LOGIN</h1>
+
+      </article>
+    </div>
+
+
   )
 }
 
-export default LoginPage
+export default LoginPage;

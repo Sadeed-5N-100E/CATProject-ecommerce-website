@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
+
+.LoginBG {
+    /* background-color: #d3d3d3;  */
+    background: url('./assets/LoginPageAssets/LoginBG.jpeg') center center/cover no-repeat;
+    position : relative;/* Make the header container relative */
+    height: 100vh;  /* Full viewport height */
+    width: 100%;    /* Ensure full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.LoginArticle{
+    background-color: white;
+    position: absolute; /* Change to absolute positioning */
+    top: 50%;  /* Move to center vertically */
+    left: 50%;  /* Move to center horizontally */
+    transform: translate(-50%, -50%); /* Adjust the position to truly center */
+    padding: 20px;
+    opacity: 75%;
+    height: 65vh;
+    width: 65vw; /* Change from vh to vw to scale responsively */
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Limit max size for larger screens */
+    max-height: 80vh; /* Limit max height for larger screens */
+    /* background-color: white;
+    position: relative;
+    padding: 20px;
+    margin-top: 15%;
+    opacity: 80%;
+    height: 65vh;
+    width: 65vh;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    */
+} 
+
+.LoginArticle h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+  
+.Loginsubheading {
+    color: #625959;
+    font-weight: bold;
+    margin-bottom: 20px;
+} 
