@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
+
+.VCheader {
+  /* background-color: #d3d3d3;  */
+  background: #d3d3d3;
+  position : relative;/* Make the header container relative */
+  height: 100%;  /* Full viewport height */
+  width: 100%;    /* Ensure full width */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* .header-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333; 
+} */
+
+.VClogo {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff; /* Dark grey for contrast */
+  margin-bottom: 10px;
+}
+
+.VCoverlay-box {
+  user-select: none;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav */
+  align-items: center;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  z-index:10;
+  background-color: #494949; /* Bright grey color */
+}
+
+.VCmain-nav {
+user-select: none;
+border-style: ridge;
+background-color: #333;
+height: 7%;
+border-radius: 5px;
+position: fixed;
+right: 1%;
+display: flex;
+align-items: center; /* Align items vertically */
+gap: 40px; /* Add spacing between nav items */
+margin-right: 2px;
+z-index:10;
+}
+
+.VCmain-nav ul {
+display: flex;
+gap: 30px;
+list-style: none;
+margin: 0;
+padding: 0;
+list-style: none;
+flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+justify-content: space-around; /* Spread items evenly */
+}
+
+.VCmain-nav ul li {
+margin: 0 20px;
+}
+
+.VCmain-nav ul li a {
+font-family: 'Ysabeau SC';
+color: white;
+text-decoration: none;
+font-size: 1.8rem;
+font-weight: 700;
+transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.VCmain-nav ul li a:hover {
+color: rgba(0, 0, 0, 0.799); /* Color on hover */
+box-shadow: inset 200px 0 0 0 white; /* Animation effect */
+padding: 0 .25rem;
+margin: 0 -.25rem;
+}
+
+/* .overlay-box p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  color: #555;
+} */
+
+/* Hamburger Button Styles */
+.VChamburger {
+  display: none; /* Hidden on larger screens */
+  position: absolute;
+  right: 25px; /* Adjust spacing from the right edge */
+  flex-direction: column;
+  justify-content: center; /* Center bars vertically */
+  gap: 7px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10; /* Ensure it appears on top of the overlay box */
+  padding: 12px;
+}
+
+.VChamburger .bar {
+  width:35px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.799);
+  border-style: ridge;
+  border-radius: 2px;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+
+/* Responsive Navigation for Smaller Screens */
+
+@media (max-width: 768px) {
+.VCoverlay-box {
+  flex-direction: column; /* Stack logo and nav on smaller screens */
+  align-items: center;
+}
+
+.VCmain-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background-color: #333;
+  z-index: 10;
+  text-align: center;
+}
+}
+
+@media (max-width: 768px) {
+.VCoverlay-box {
+  flex-direction: column; /* Stack logo and nav on smaller screens */
+  align-items: center;
+}
+
+.VCmain-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background-color: #333;
+  z-index: 10;
+  text-align: center;
+}
+
+.VCmain-nav.open {
+  display: flex;
+}
+
+.VChamburger {
+  display: flex;
+  top: 10px;
+  right: 25px;
+  z-index: 120;
+}
+}
