@@ -16,7 +16,7 @@
 .LoginLogo {
     display: block; /* Makes the logo behave like a block-level element */
     margin: 15px auto; /* Center the logo horizontally and add top/bottom space */
-    width: 37%; /* Adjust the size as needed */
+    width: 30%; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Ensure the image scales properly */
     cursor: pointer;
@@ -26,9 +26,7 @@
 
 .LoginArticle{
     position: fixed; /* Change to absolute positioning */
-    top: 50%;  /* Move to center vertically */
-    left: 50%;  /* Move to center horizontally */
-    transform: translate(-50%, -50%); /* Adjust the position to truly center */
+    top: 10%;
     padding: 20px;
     height: 150vh;
     width: 65vw; /* Change from vh to vw to scale responsively */
@@ -57,7 +55,7 @@
     font-family: 'Ysabeau SC';
     font-weight: 750;
     text-align: center;
-    font-size: 50px;
+    font-size: 200%;
     margin-bottom: 10px;
     position: relative;
     z-index: 1;
@@ -76,14 +74,14 @@
     display: flex;
     flex-direction: column;
     font-family: 'Playfair Display';
-    font-size: 150%;
+    font-size: 160%;
     position: relative;
     z-index: 1;
 }
 
 .LoginForm input{
     padding: 10px;
-    font-size: 65%;
+    font-size: 80%;
     border: 1px solid #eedede;
     border-radius: 10px;
     margin-top: 5px;
