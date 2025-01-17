@@ -54,6 +54,7 @@ align-items: center; /* Align items vertically */
 gap: 40px; /* Add spacing between nav items */
 margin-right: 2px;
 z-index:10;
+
 }
 
 .VCmain-nav ul {
@@ -171,4 +172,94 @@ margin: 0 -.25rem;
   right: 25px;
   z-index: 120;
 }
+}
+
+.Vcart-container {
+  margin-top: calc(var(--overlay-height, 100px)); /* Use a CSS variable for dynamic height */
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Vcart-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Vart-table th,
+.Vcart-table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.Vcart-table th {
+  background-color: #494949;
+  color: white;
+}
+
+
+.Vcart-table td {
+  text-align: left; /* Align table data to the left */
+}
+
+.Vproduct-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block; /* Makes the image behave as a block-level element */
+  margin: 0 auto; /* Centers the image horizontally */
+}
+
+.Vquantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Vquantity-control button {
+  background-color: #494949;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Vquantity-control button:hover {
+  background-color: #666;
+}
+
+.Vquantity-box {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.total-label {
+  text-align: right;
+  font-weight: bold;
+}
+
+.Vcheckout-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.Vcheckout-btn:hover {
+  background-color: #0056b3;
 }
