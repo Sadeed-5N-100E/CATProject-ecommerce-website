@@ -13,36 +13,54 @@
     box-sizing: border-box;
 }
 
+.LoginLogo {
+    display: block; /* Makes the logo behave like a block-level element */
+    margin: 15px auto; /* Center the logo horizontally and add top/bottom space */
+    width: 190px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image scales properly */
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
 .LoginArticle{
-    background-color: white;
-    position: absolute; /* Change to absolute positioning */
+    position: fixed; /* Change to absolute positioning */
     top: 50%;  /* Move to center vertically */
     left: 50%;  /* Move to center horizontally */
     transform: translate(-50%, -50%); /* Adjust the position to truly center */
     padding: 20px;
-    opacity: 75%;
-    height: 65vh;
+    height: 150vh;
     width: 65vw; /* Change from vh to vw to scale responsively */
     border-radius: 50px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 500px; /* Limit max size for larger screens */
     max-height: 80vh; /* Limit max height for larger screens */
-    /* background-color: white;
-    position: relative;
-    padding: 20px;
-    margin-top: 15%;
-    opacity: 80%;
-    height: 65vh;
-    width: 65vh;
-    border-radius: 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    */
+    border-style: ridge;
+    border-color: black;
 } 
 
+.LoginArticle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75); /* Semi-transparent background */
+    border-radius: 50px; /* Match the parent border radius */
+    z-index: 0; /* Place it behind the content */
+}
+
 .LoginArticle h1 {
+    margin-top: 5px;
+    font-family: 'Ysabeau SC';
+    font-weight: 750;
     text-align: center;
     font-size: 50px;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
 }
   
 .Loginsubheading {
@@ -50,3 +68,74 @@
     font-weight: bold;
     margin-bottom: 20px;
 } 
+
+.LoginForm{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.LoginForm label{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Playfair Display';
+    font-size: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.LoginForm input{
+    padding: 10px;
+    font-size: 25px;
+    border: 1px solid #eedede;
+    border-radius: 10px;
+    margin-top: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.LoginForm button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    top: 15px;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    font-family: 'Ysabeau SC';
+    position: relative;
+    z-index: 1;
+}
+
+.LoginForm button:hover {
+    background-color: #5ace60;
+    color: black;
+}
+
+.LoginForm .Signupbutton {
+    padding: 10px 15px;
+    background-color: #e8c13f;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    top: 15px;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    font-family: 'Ysabeau SC';
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    text-decoration: none; /* Remove underline for the link */
+    display: inline-block; /* Ensure it's styled like a button */   
+}
+
+.LoginForm .Signupbutton:hover {
+    background-color: #f9ce41;
+    color: black;
+}
