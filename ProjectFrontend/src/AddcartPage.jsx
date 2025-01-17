@@ -9,20 +9,20 @@ const AddcartPage = () => {
 
   return (
 <>
-    <header className="header">
-    <div className="overlay-box">
+    <header className="Aheader">
+    <div className="Aoverlay-box">
 
-    <div className="logo">
+    <div className="Alogo">
         CAT Pharmacy
     </div>
-    <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
+    <nav className={`Amain-nav ${isMenuOpen ? 'open' : ''}`}>
         <ul>
             {/* <li><a href="/SignupPage">Sign Up</a></li> */}
             <li><a href="/LandingPage">back to Main</a></li>
             <li><a href="/ViewCartPage">View Cart</a></li>
         </ul>
     </nav>
-    <button className="LPhamburger" onClick={toggleMenu}>
+    <button className="Ahamburger" onClick={toggleMenu}>
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>

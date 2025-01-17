@@ -66,11 +66,11 @@ const LandingPage = () => {
 
   return (
       <>
-      <header className="header">
+      <header className="Lheader">
           <div className="overlay-box">
       
           <div className="logo">
-              CAT Pharmacy
+              CAT PHARMACY
           </div>
           <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
               <ul>
@@ -98,26 +98,26 @@ const LandingPage = () => {
       </header>
 
        {/* Categories Section */}
- <section className="categories-section">
- <h2 className="categories-title">Category</h2>
- <div className="categories-container">
-   {categories.map((category, index) => (
-     <div className="category-box" key={index}>
-       <img src={category.image} alt={category.title} className="category-image" />
-       <div className="category-details">
-         <h3 className="category-title">{category.title}</h3>
-         <p className="category-description">{category.description}</p>
-         <button
-           className="category-button"
-           onClick={() => window.location.href = category.link}
-         >
-           Check This Out
-         </button>
-       </div>
-     </div>
-   ))}
-    </div>
-   </section>
+      <section className="categories-section">
+        <h2 className="categories-title">Category</h2>
+          <div className="categories-container">
+            {categories.map((category, index) => (
+              <div className="category-box" key={index}>
+                <img src={category.image} alt={category.title} className="category-image" />
+                <div className="category-details">
+                  <h3 className="category-title">{category.title}</h3>
+                  <p className="category-description">{category.description}</p>
+                  <button
+                    className="category-button"
+                    onClick={() => window.location.href = category.link}
+                  >
+                    Check This Out
+                  </button>
+                </div>
+              </div>
+            ))}
+            </div>
+        </section>
       </>
   )
 }
