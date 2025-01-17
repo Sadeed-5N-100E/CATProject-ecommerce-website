@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
+
+.SignupBG {
+    /* background-color: #d3d3d3;  */
+    background: url('./assets/LoginPageAssets/LoginBG.jpeg') center center/cover no-repeat;
+    position : relative;/* Make the header container relative */
+    height: 100vh;  /* Full viewport height */
+    width: 100%;    /* Ensure full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.SignupArticle{
+    position: fixed; /* Change to absolute positioning */
+    top: 50%;  /* Move to center vertically */
+    left: 50%;  /* Move to center horizontally */
+    transform: translate(-50%, -50%); /* Adjust the position to truly center */
+    padding: 20px;
+    height: 76vh;
+    width: 65vw; /* Change from vh to vw to scale responsively */
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Limit max size for larger screens */
+    max-height: 80vh; /* Limit max height for larger screens */
+    border-style: ridge;
+    border-color: black;
+} 
+
+.SignupArticle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75); /* Semi-transparent background */
+    border-radius: 50px; /* Match the parent border radius */
+    z-index: 0; /* Place it behind the content */
+}
+
+.SignupArticle h1 {
+    margin-top: 5px;
+    font-family: 'Ysabeau SC';
+    font-weight: 750;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.SignupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.SignupForm label{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Playfair Display';
+    font-size: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.SignupForm input{
+    padding: 10px;
+    font-size: 25px;
+    border: 1px solid #eedede;
+    border-radius: 10px;
+    margin-top: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.SignupForm button {
+    padding: 10px 15px;
+    background-color: #4020a0;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    top: 15px;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    font-family: 'Ysabeau SC';
+    position: relative;
+    z-index: 1;
+}
+
+.SignupForm button:hover {
+    background-color: #5229cc;
+    color: black;
+}
