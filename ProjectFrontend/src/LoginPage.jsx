@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 import PharmacyLogo from "./assets/LoginPageAssets/LoginLogo.png";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "./LoginPage.css"
 
 const LoginPage = () => {
-
+  const { setIsLoggedIn } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -15,17 +16,16 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/Project/LoginServlet', {
+      const response = await axios.post('http://localhost:8080/cat201project/LoginServlet', {
         email: email,
         password: password
       });
 
       const data = response.data;
       if (data.status === 'success') {
-        // Handle successful login (e.g., redirect to landing page)
+        setIsLoggedIn(true);
         navigate('/LandingPage');
       } else {
-        // Handle login error
         setErrorMessage(data.message);
       }
     } catch (error) {
@@ -61,8 +61,8 @@ const LoginPage = () => {
             />
           </label>
           <button onClick={handleLogin}>LOGIN</button>
-          {errorMessage && <p className="error">{errorMessage}</p>}
           <Link to="/SignupPage" className="Signupbutton">SIGN UP</Link>
+          {errorMessage && <p className="error">{errorMessage}</p>}
         </div>
       </article>
     </div>

@@ -42,6 +42,7 @@ import LoginPage from './LoginPage.jsx';
 import SignupPage from './SignupPage.jsx';
 import ViewcartPage from './ViewcartPage.jsx';
 import PaymentPage from './PaymentPage.jsx';
+import { AuthProvider } from './AuthContext';
 
 
 const router = createBrowserRouter([
@@ -82,7 +83,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-    <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </>
   )
 }

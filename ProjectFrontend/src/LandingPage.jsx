@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState ,useEffect, useContext} from 'react';
 import "./LandingPage.css";
 import ColdnFlu from "./assets/CategoryColdnFlu.jpg";
 import PainRelief from "./assets/CategoryPainRelief.jpeg";
@@ -8,10 +8,12 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
 import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
+import { AuthContext } from './AuthContext';
 
 
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isLoggedIn } = useContext(AuthContext);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -67,8 +69,12 @@ const LandingPage = () => {
           <img src={PharmacyLogoNoWords} alt="Pharmacy Logo No Words" className="LPLogoNoWords"/>
           <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
               <ul>
-                  <li><Link to="/SignupPage">Sign Up</Link></li>
-                  <li><Link to="/LoginPage">Log in</Link></li>
+                  {!isLoggedIn && (
+                    <>
+                      <li><Link to="/SignupPage">Sign Up</Link></li>
+                      <li><Link to="/LoginPage">Log in</Link></li>
+                    </>
+                  )}
                   <li><Link to="/ViewCartPage">View Cart</Link></li>
               </ul>
           </nav>
