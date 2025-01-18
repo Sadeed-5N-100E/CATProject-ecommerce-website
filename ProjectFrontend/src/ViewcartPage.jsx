@@ -2,7 +2,6 @@ import React, { useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Asp from "./assets/Asp.jpg";
 import {Link} from "react-router-dom";
-import {useNavigate} from "react-router-dom";
 import "./ViewcartPage.css"
 import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
 import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
@@ -68,8 +67,8 @@ const ViewcartPage = () => {
 
           const navigate = useNavigate();
 
-          const handleCheckoutClick = (link) => {
-            navigate(link); // Navigate to the new page
+          const handleCheckoutClick = () => {
+            navigate("/PaymentPage"); // Navigate to the new page
             setTimeout(() => {
               window.scrollTo(0, 0); // Scroll to the top after navigation
             }, 100); // Ensure this happens after navigation
@@ -133,7 +132,7 @@ const ViewcartPage = () => {
             </tr>
             <tr>
               <td colSpan="4">
-                <button className="Vcheckout-btn" onClick={() => handleCheckoutClick(category.link)}>Checkout</button> // Pass the category link to navigate
+                <button className="Vcheckout-btn" onClick={() => handleCheckoutClick()}>Checkout</button>
               </td>
             </tr>
           </tfoot>
