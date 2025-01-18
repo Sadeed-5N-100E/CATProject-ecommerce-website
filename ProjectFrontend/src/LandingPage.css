@@ -34,30 +34,50 @@
     color: #333; 
   } */
 
-.logo {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ffffff; /* Dark grey for contrast */
-    margin-bottom: 10px;
-}
+  .LPLogo {
+    display: block; /* Makes the logo behave like a block-level element */
+    margin: 15px; /* Center the logo horizontally and add top/bottom space */
+    left: -2%;
+    width: 333px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image scales properly */
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    border-radius: 22px;
+  }
+
+  .LPLogoNoWords{
+    display: none; /* Makes the logo behave like a block-level element */
+    margin: 15px; /* Center the logo horizontally and add top/bottom space */
+    left: -2%;
+    width: 60px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image scales properly */
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    border-radius: 22px;
+  }
 
 .overlay-box {
     user-select: none;
     position: fixed;
     width: 100%;
+    height: 10%;
     display: flex;
     justify-content: space-between; /* Space between logo and nav */
     align-items: center;
     padding: 20px 40px;
     box-sizing: border-box;
     z-index:100;
-    background-color: #494949; /* Bright grey color */
+    background-color: #674cf2; /* Bright color */
 }
 
 .main-nav {
   user-select: none;
   border-style: ridge;
-  background-color: #333;
+  background-color: #4b33c3;
   height: 7%;
   border-radius: 5px;
   position: fixed;
@@ -111,7 +131,8 @@
 .LPhamburger {
     display: none; /* Hidden on larger screens */
     position: absolute;
-    right: 25px; /* Adjust spacing from the right edge */
+    right: 10px; /* Adjust spacing from the right edge */
+    margin-top: -5px;
     flex-direction: column;
     justify-content: center; /* Center bars vertically */
     gap: 7px;
@@ -135,12 +156,16 @@
 
 /* Responsive Navigation for Smaller Screens */
 
-@media (max-width: 768px) {
-  .overlay-box {
-    flex-direction: column; /* Stack logo and nav on smaller screens */
-    align-items: center;
+@media (max-width: 900px){
+  .LPLogo{
+    display: none;
   }
+  .LPLogoNoWords{
+    display: flex;
+  }
+}
 
+@media (max-width: 768px) {
   .main-nav {
     display: none;
     flex-direction: column;
@@ -156,11 +181,6 @@
 }
 
 @media (max-width: 768px) {
-  .overlay-box {
-    flex-direction: column; /* Stack logo and nav on smaller screens */
-    align-items: center;
-  }
-
   .main-nav {
     display: none;
     flex-direction: column;
@@ -233,12 +253,13 @@
 .categories-section {
     width: 100%;
     padding: 40px 20px;
-    background-color: #f9f9f9;
+    background-color: #cdc8f1;
     text-align: center;
     box-sizing: border-box;
   }
   
   .categories-title {
+    font-family: "Ysabeau SC";
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
@@ -291,7 +312,7 @@
   .category-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #c6c4c4;
+    background-color: #674cf2;
     color: white;
     font-size: 1rem;
     border: none;
@@ -302,5 +323,5 @@
   }
   
   .category-button:hover {
-    background-color: #a2aca7;
+    background-color: #4b33c3;
   } 

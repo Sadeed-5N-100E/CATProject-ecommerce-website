@@ -2,8 +2,10 @@ import React, { useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Asp from "./assets/Asp.jpg";
 import {Link} from "react-router-dom";
-
+import {useNavigate} from "react-router-dom";
 import "./ViewcartPage.css"
+import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
+import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
 
 const ViewcartPage = () => {
 
@@ -66,9 +68,11 @@ const ViewcartPage = () => {
 
           const navigate = useNavigate();
 
-          const handleCheckout = () => {
-            // Navigate to the payment page
-            navigate('/PaymentPage');
+          const handleCheckoutClick = (link) => {
+            navigate(link); // Navigate to the new page
+            setTimeout(() => {
+              window.scrollTo(0, 0); // Scroll to the top after navigation
+            }, 100); // Ensure this happens after navigation
           };
 
 
@@ -76,19 +80,18 @@ const ViewcartPage = () => {
     <>
     <header className="VCheader">
     <div className="VCoverlay-box">
-    <div className="VClogo">
-        CAT Pharmacy
-    </div>
-    <nav className={`VCmain-nav ${isMenuOpen ? 'open' : ''}`}>
-        <ul>
-            <li><Link to="/LandingPage">Back to main</Link></li>
-        </ul>
-    </nav>
-    <button className="VChamburger" onClick={toggleMenu}>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-    </button>
+      <img src={PharmacyLogo} alt="Pharmacy Logo" className="VCLogo"/>
+      <img src={PharmacyLogoNoWords} alt="Pharmacy Logo No Words" className="VCLogoNoWords"/>
+      <nav className={`VCmain-nav ${isMenuOpen ? 'open' : ''}`}>
+          <ul>
+              <li><Link to="/LandingPage">Back to main</Link></li>
+          </ul>
+      </nav>
+      <button className="VChamburger" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+      </button>
     </div>
 
     <sector className="Vcart-container">
@@ -130,7 +133,7 @@ const ViewcartPage = () => {
             </tr>
             <tr>
               <td colSpan="4">
-                <button className="Vcheckout-btn" onClick={handleCheckout}>Checkout</button>
+                <button className="Vcheckout-btn" onClick={() => handleCheckoutClick(category.link)}>Checkout</button> // Pass the category link to navigate
               </td>
             </tr>
           </tfoot>

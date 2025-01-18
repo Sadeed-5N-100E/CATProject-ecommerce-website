@@ -5,16 +5,17 @@ import PainRelief from "./assets/CategoryPainRelief.jpeg";
 import FirstAid from "./assets/CategoryFirstAid.jpg";
 import DigestiveHealth from "./assets/CategoryDigestiveHealth.jpg";
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
+import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
+import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
 
 
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-  setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
-
 
   const categories = [
     {
@@ -43,18 +44,27 @@ const LandingPage = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (link) => {
+    navigate(link); // Navigate to the new page
+    setTimeout(() => {
+      window.scrollTo(0, 0); // Scroll to the top after navigation
+    }, 100); // Ensure this happens after navigation
+  };
+
   const infoParagraphs = [
     "Here are some important details about our products and services. You can explore more in each category section below, where we explain our offerings in more detail. We currently offer four categories for customers: Pain Relief, First Aid, Cold and Flu, and Digestive Health. Customers can explore these categories by clicking on the respective links.",
     "Clarification: Our products are sourced from external suppliers and are not manufactured by this pharmacy. Additionally, we would like to clarify that all customer transaction histories are recorded."
   ];
+
   return (
       <>
       <header className="Lheader">
           <div className="overlay-box">
       
-          <div className="logo">
-              CAT PHARMACY
-          </div>
+          <img src={PharmacyLogo} alt="Pharmacy Logo" className="LPLogo"/>
+          <img src={PharmacyLogoNoWords} alt="Pharmacy Logo No Words" className="LPLogoNoWords"/>
           <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
               <ul>
                   <li><Link to="/SignupPage">Sign Up</Link></li>
@@ -82,7 +92,7 @@ const LandingPage = () => {
 
        {/* Categories Section */}
       <section className="categories-section">
-        <h2 className="categories-title">Category</h2>
+        <h2 className="categories-title">Categories</h2>
           <div className="categories-container">
             {categories.map((category, index) => (
               <div className="category-box" key={index}>
@@ -90,13 +100,11 @@ const LandingPage = () => {
                 <div className="category-details">
                   <h3 className="category-title">{category.title}</h3>
                   <p className="category-description">{category.description}</p>
-                  <button className="category-button"
-                  onClick={() => {
-                    window.scrollTo(0,0);
-                  }}>
-                    <Link to={category.link} style={{textDecoration: 'none', color: 'inherit'}}>
+                  <button
+                    className="category-button"
+                    onClick={() => handleCategoryClick(category.link)} // Pass the category link to navigate
+                  >
                       Check This Out
-                    </Link>
                   </button>
                 </div>
               </div>

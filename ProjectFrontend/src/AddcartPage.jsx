@@ -3,6 +3,8 @@ import "./AddcartPage.css"
 import promo2 from "./assets/Promo2.jpg";
 import Asp from "./assets/Asp.jpg";
 import { Link } from 'react-router-dom';
+import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
+import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
 
 const MedicineCard = ({ medicine }) => {
     const [quantity, setQuantity] = useState(0);
@@ -28,7 +30,7 @@ const MedicineCard = ({ medicine }) => {
             <div className="quantity-box">{quantity}</div>
             <button onClick={increaseQuantity}>+</button>
           </div>
-          <button className="add-cart-btn" onClick={addToCart}>Add Cart</button>
+          <button className="add-cart-btn" onClick={addToCart}>ADD CART</button>
         </div>
       </div>
     );
@@ -97,31 +99,29 @@ const AddcartPage = () => {
           },
       ];
   return (
-<>
+    <>
     <header className="Aheader">
     <div className="Aoverlay-box">
-
-    <div className="Alogo">
-        CAT Pharmacy
-    </div>
-    <nav className={`Amain-nav ${isMenuOpen ? 'open' : ''}`}>
-        <ul>
-            {/* <li><a href="/SignupPage">Sign Up</a></li> */}
-            <li><Link to ="/LandingPage">Back to Main</Link></li>
-            <li><Link to="/ViewCartPage">View Cart</Link></li>
-        </ul>
-    </nav>
-    <button className="Ahamburger" onClick={toggleMenu}>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-    </button>
+    <img src={PharmacyLogo} alt="Pharmacy Logo" className="ALogo"/>
+    <img src={PharmacyLogoNoWords} alt="Pharmacy Logo No Words" className="ALogoNoWords"/>
+      <nav className={`Amain-nav ${isMenuOpen ? 'open' : ''}`}>
+          <ul>
+              {/* <li><a href="/SignupPage">Sign Up</a></li> */}
+              <li><Link to ="/LandingPage">Back to Main</Link></li>
+              <li><Link to="/ViewCartPage">View Cart</Link></li>
+          </ul>
+      </nav>
+      <button className="Ahamburger" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+      </button>
     </div>
     <section className="medicine-section">
-        {medicines.map((medicine, index) => (
-          <MedicineCard key={index} medicine={medicine} />
-        ))}
-      </section>
+      {medicines.map((medicine, index) => (
+        <MedicineCard key={index} medicine={medicine} />
+      ))}
+    </section>
 </header>
     </>
   )

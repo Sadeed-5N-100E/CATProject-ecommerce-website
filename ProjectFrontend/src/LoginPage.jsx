@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import PharmacyLogo from "./assets/LoginPageAssets/PharmacyLogo.jpeg";
+import PharmacyLogo from "./assets/LoginPageAssets/LoginLogo.png";
 import { Link } from 'react-router-dom';
 import "./LoginPage.css"
 
