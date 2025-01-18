@@ -1,13 +1,5 @@
 import React, { useState ,useEffect} from 'react';
 import "./LandingPage.css";
-import promo1 from "./assets/Promo1.jpg";
-import promo2 from "./assets/Promo2.jpg";
-// import promo3 from "./assets/promo3.jpg";
-// import HBP from "./assets/HBPCategory.jpg";
-// import Dia from "./assets/DiaCategory.jpg";
-// import Cough from "./assets/CoughCategory.jpg";
-// import HF from "./assets/HFCategory.jpg";
-
 import ColdnFlu from "./assets/CategoryColdnFlu.jpg";
 import PainRelief from "./assets/CategoryPainRelief.jpeg";
 import FirstAid from "./assets/CategoryFirstAid.jpg";
@@ -17,58 +9,43 @@ import DigestiveHealth from "./assets/CategoryDigestiveHealth.jpg";
 
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const toggleMenu = () => {
   setIsMenuOpen(!isMenuOpen);
   };
 
-   // Array of slider images
-   const slides = [
-    {
-      image: [promo1], // Replace with your image paths
-      title: "88% Max discount start form 14 Jan",
-    },
-    {
-      image: [promo2],
-      title: "Up to 80% Off discount !",
-    },
-  ];
 
   const categories = [
     {
       image: PainRelief,
       title: "Pain relief",
-      description: "High Blood Pressure Description",
+      description: "Pain relief medicine, also known as analgesics, are drugs designed to reduce or eliminate pain. They work by targeting the underlying causes of pain or by interrupting the pain signals in the nervous system.",
       link: "/AddcartPage",
     },
     {
       image: ColdnFlu,
       title: "Cold and Flu",
-      description: "Cough desciption",
+      description: "Cold and flu are both respiratory illnesses caused by viruses, but they are caused by different types of viruses.",
       link: "/AddcartPage",
     },
     {
       image: DigestiveHealth,
       title: "Digestive Health",
-      description: "High Fever Description",
+      description: "Digestive problems refer to issues with the digestive system, which includes the stomach, intestines, and other organs involved in digestion. Common problems include indigestion, bloating, constipation, diarrhea, acid reflux, and irritable bowel syndrome (IBS).",
       link: "/AddcartPage",
     },
     {
       image: FirstAid,
       title: "First Aid",
-      description: "Diabetes desciption",
+      description: "First aid is the immediate care provided to a person who is injured or suddenly ill before professional medical help is available. It involves simple, often life-saving techniques to prevent further harm, alleviate pain, or stabilize the person.",
       link: "/AddcartPage",
     },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000); // Change slides every 3 seconds
-    return () => clearInterval(interval); // Clean up on component unmount
-  }, [slides.length]);
-
+  const infoParagraphs = [
+    "Here are some important details about our products and services. You can explore more in each category section below, where we explain our offerings in more detail. We currently offer four categories for customers: Pain Relief, First Aid, Cold and Flu, and Digestive Health. Customers can explore these categories by clicking on the respective links.",
+    "Clarification: Our products are sourced from external suppliers and are not manufactured by this pharmacy. Additionally, we would like to clarify that all customer transaction histories are recorded."
+  ];
   return (
       <>
       <header className="Lheader">
@@ -89,17 +66,17 @@ const LandingPage = () => {
               <span className="bar"></span>
               <span className="bar"></span>
           </button>
-          </div>
-          {/* Promotions Section */}
-           <h3 className="promotions-title"> ... Promotions ...</h3>
-            <div className="LP_Slider">
-             <img
-              src={slides[currentSlide].image}
-              alt={`Slide ${currentSlide + 1}`}
-               className="slider-image"
-             />
-         <h1>{slides[currentSlide].title}</h1>
-        </div> 
+        </div>
+      {/* Information Box */}
+      <div className="info-box">
+        <h2 className="info-title">Important Information</h2>
+        <div className="info-details">
+        {infoParagraphs.map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ))}
+      </div>
+      </div>
+
       </header>
 
        {/* Categories Section */}

@@ -186,65 +186,48 @@
   }
 }
 
-.promotions-title {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #000000; /* Adjust as needed */
-    margin-bottom: 10px; /* Add some spacing below the title */
-    text-align: relative;
-    margin-top: 200px; /* Move the slider down by 50px */
-    left: 10%; /* Matches the slider's horizontal alignment (adjust as needed) */
+.info-box {
+  margin-top: 100px;
+  position: absolute;
+  top: 80px;
+  left: 10%;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: transform 0.3s ease-in-out;
+  z-index: 10; /* Make sure it's above other content */
+  overflow: hidden; /* Prevent overflow when scaling */
 }
 
-  .LP_Slider {
-  position: relative;
-  width: 90%; /* Full width slider */
-  height: 400px; /* Fixed height for the slider box (you can adjust this value) */
-  background: #333; /* Fallback background color */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* Ensure no overflow */
-  box-sizing: border-box; /* Prevent any padding or borders from affecting the layout */
-  border-radius: 8px; /* Optional: add rounded corners to make it a box */}
-  
-.slider-image {
-    width: 100%; /* Fill the slider width */
-    height: 100%; /* Fill the slider height */
-    object-fit: cover; /* Ensure images are cropped to fit without distortion */
-    transition: opacity 1s ease-in-out; /* Smooth transition between images */
-}
-  
-.LP_Slider h1 {
-    position: absolute;
-    top: 0px;  /* Adjust the distance from the top */
-    left: 5px; /* Adjust the distance from the left */
-    background-color: white; /* White background */
-    color: #333; /* Dark text color for better visibility */
-    font-size: 1.5rem; /* Adjust font size as needed */
-    font-weight: bold;
-    padding: 5px 10px; /* Add padding around the text */
-    z-index: 1; /* Ensure it appears above the image */
-    border-radius: 5px; /* Optional: add rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: add a subtle shadow */
+.info-title {
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-  /* Responsive Slider Text */
-@media (max-width: 768px) {
-    .LP_Slider h1 {
-      font-size: 1.5rem;
-    }
-
+.info-details {
+  text-align: left;
 }
-  
-  /* General Utility Classes */
-   .hidden {
-    display: none;
+
+.info-box:hover {
+  transform: scale(1.05);
+}
+
+/* Larger font for laptop screens */
+@media (min-width: 1024px) {
+  .info-details {
+    font-size: 1.2rem; /* Larger font for laptop screens */
   }
-  
-  .visible {
-    display: block;
-  } 
+}
+
+@media (max-width: 768px) {
+  .info-box {
+    width: 80%; /* Ensure it doesn't get too wide on small screens */
+  }
+}
 
  /* Categories Section */
 .categories-section {
