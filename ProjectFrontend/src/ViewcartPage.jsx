@@ -1,6 +1,7 @@
 import React, { useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Asp from "./assets/Asp.jpg";
+import {Link} from "react-router-dom";
 
 import "./ViewcartPage.css"
 
@@ -80,7 +81,7 @@ const ViewcartPage = () => {
     </div>
     <nav className={`VCmain-nav ${isMenuOpen ? 'open' : ''}`}>
         <ul>
-            <li><a href="/LandingPage">Back to main</a></li>
+            <li><Link to="/LandingPage">Back to main</Link></li>
         </ul>
     </nav>
     <button className="VChamburger" onClick={toggleMenu}>
@@ -141,4 +142,4 @@ const ViewcartPage = () => {
   )
 }
 
-export default ViewcartPage
+export default ViewcartPage;

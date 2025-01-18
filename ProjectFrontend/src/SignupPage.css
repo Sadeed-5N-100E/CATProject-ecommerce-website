@@ -2,9 +2,9 @@
 
 .SignupBG {
     /* background-color: #d3d3d3;  */
-    background: url('./assets/LoginPageAssets/LoginBG.jpeg') center center/cover no-repeat;
+    background: url('./assets/SignUpPageAssets/SignUpBG.jpg') center center/cover no-repeat;
     position : relative;/* Make the header container relative */
-    height: 120vh;  /* Full viewport height */
+    height: 140vh;  /* Full viewport height */
     width: 100%;    /* Ensure full width */
     display: flex;
     flex-direction: column;
@@ -15,14 +15,14 @@
 
 .SignupArticle{
     position: relative; /* Change to absolute positioning */
-    top: 7.5%;
+    top: 9.5%;
     padding: 20px;
-    height: 100vh;
+    height: 105vh;
     width: 65vw; /* Change from vh to vw to scale responsively */
     border-radius: 50px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 600px; /* Limit max size for larger screens */
-    max-height: 100vh; /* Limit max height for larger screens */
+    max-height: 120vh; /* Limit max height for larger screens */
     border-style: ridge;
     border-color: black;
 } 
@@ -70,7 +70,7 @@
 
 .SignupForm input{
     padding: 10px;
-    font-size: 80%;
+    font-size: 75%;
     border: 1px solid #eedede;
     border-radius: 10px;
     margin-top: 5px;
@@ -82,7 +82,7 @@
     padding: 12px 20px;
     background-color: #4020a0;
     color: white;
-    font-size: 150%;
+    font-size: 160%;
     font-weight: 700;
     top: 15px;
     border: none;
@@ -102,4 +102,35 @@
     color: red;
     font-size: 120%;
     margin-top: -10px;
+}
+
+
+@media (max-width: 1024px){
+    .SignupArticle h1{
+        font-size: 230%;
+    }
+    .SignupForm label {
+        font-size: 158%;
+    }
+    .SignupForm input {
+        font-size: 77%;
+    }
+    .SignupForm button {
+        font-size: 158%;
+    }
+}
+
+@media (max-width: 480px){
+    .SignupArticle h1{
+        font-size: 230%;
+    }
+    .SignupForm label {
+        font-size: 185%;
+    }
+    .SignupForm input {
+        font-size: 100%;
+    }
+    .SignupForm button {
+        font-size: 175%;
+    }
 }

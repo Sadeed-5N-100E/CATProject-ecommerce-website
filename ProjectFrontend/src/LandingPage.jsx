@@ -4,6 +4,7 @@ import ColdnFlu from "./assets/CategoryColdnFlu.jpg";
 import PainRelief from "./assets/CategoryPainRelief.jpeg";
 import FirstAid from "./assets/CategoryFirstAid.jpg";
 import DigestiveHealth from "./assets/CategoryDigestiveHealth.jpg";
+import { Link } from 'react-router-dom';
 
 
 
@@ -56,9 +57,9 @@ const LandingPage = () => {
           </div>
           <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
               <ul>
-                  <li><a href="/SignupPage">Sign Up</a></li>
-                  <li><a href="/LoginPage">Log in</a></li>
-                  <li><a href="/ViewCartPage">View Cart</a></li>
+                  <li><Link to="/SignupPage">Sign Up</Link></li>
+                  <li><Link to="/LoginPage">Log in</Link></li>
+                  <li><Link to="/ViewCartPage">View Cart</Link></li>
               </ul>
           </nav>
           <button className="LPhamburger" onClick={toggleMenu}>
@@ -89,11 +90,13 @@ const LandingPage = () => {
                 <div className="category-details">
                   <h3 className="category-title">{category.title}</h3>
                   <p className="category-description">{category.description}</p>
-                  <button
-                    className="category-button"
-                    onClick={() => window.location.href = category.link}
-                  >
-                    Check This Out
+                  <button className="category-button"
+                  onClick={() => {
+                    window.scrollTo(0,0);
+                  }}>
+                    <Link to={category.link} style={{textDecoration: 'none', color: 'inherit'}}>
+                      Check This Out
+                    </Link>
                   </button>
                 </div>
               </div>

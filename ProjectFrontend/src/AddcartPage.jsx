@@ -2,6 +2,7 @@ import React, { useState ,useEffect} from 'react';
 import "./AddcartPage.css"
 import promo2 from "./assets/Promo2.jpg";
 import Asp from "./assets/Asp.jpg";
+import { Link } from 'react-router-dom';
 
 const MedicineCard = ({ medicine }) => {
     const [quantity, setQuantity] = useState(0);
@@ -106,8 +107,8 @@ const AddcartPage = () => {
     <nav className={`Amain-nav ${isMenuOpen ? 'open' : ''}`}>
         <ul>
             {/* <li><a href="/SignupPage">Sign Up</a></li> */}
-            <li><a href="/LandingPage">back to Main</a></li>
-            <li><a href="/ViewCartPage">View Cart</a></li>
+            <li><Link to ="/LandingPage">Back to Main</Link></li>
+            <li><Link to="/ViewCartPage">View Cart</Link></li>
         </ul>
     </nav>
     <button className="Ahamburger" onClick={toggleMenu}>

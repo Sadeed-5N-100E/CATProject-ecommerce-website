@@ -93,7 +93,7 @@
     padding: 10px 15px;
     background-color: #4CAF50;
     color: white;
-    font-size: 150%;
+    font-size: 135%;
     font-weight: 700;
     top: 15px;
     border: none;
@@ -113,7 +113,7 @@
     padding: 10px 15px;
     background-color: #e8c13f;
     color: white;
-    font-size: 150%;
+    font-size: 135%;
     font-weight: 700;
     top: 15px;
     border: none;
@@ -134,12 +134,21 @@
 
 @media (max-width: 1024px) {
     .LoginLogo{
-        width: 31.5%;
+        width: 37.5%;
     }
 }
 
 @media (max-width: 480px) {
     .LoginLogo{
-        width: 48%;
+        width: 55%;
+    }
+    .LoginArticle h1 {
+        font-size: 230%;
+    }
+    .LoginForm button {
+        font-size: 170%;
+    }
+    .LoginForm .Signupbutton {
+        font-size: 170%;
     }
 }
