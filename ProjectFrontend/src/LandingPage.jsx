@@ -3,10 +3,17 @@ import "./LandingPage.css";
 import promo1 from "./assets/Promo1.jpg";
 import promo2 from "./assets/Promo2.jpg";
 // import promo3 from "./assets/promo3.jpg";
-import HBP from "./assets/HBPCategory.jpg";
-import Dia from "./assets/DiaCategory.jpg";
-import Cough from "./assets/CoughCategory.jpg";
-import HF from "./assets/HFCategory.jpg";
+// import HBP from "./assets/HBPCategory.jpg";
+// import Dia from "./assets/DiaCategory.jpg";
+// import Cough from "./assets/CoughCategory.jpg";
+// import HF from "./assets/HFCategory.jpg";
+
+import ColdnFlu from "./assets/CategoryColdnFlu.jpg";
+import PainRelief from "./assets/CategoryPainRelief.jpeg";
+import FirstAid from "./assets/CategoryFirstAid.jpg";
+import DigestiveHealth from "./assets/CategoryDigestiveHealth.jpg";
+
+
 
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,26 +37,26 @@ const LandingPage = () => {
 
   const categories = [
     {
-      image: promo1,
-      title: "High Blood Pessure",
+      image: PainRelief,
+      title: "Pain relief",
       description: "High Blood Pressure Description",
       link: "/AddcartPage",
     },
     {
-      image: Cough,
-      title: "Cough",
+      image: ColdnFlu,
+      title: "Cold and Flu",
       description: "Cough desciption",
       link: "/AddcartPage",
     },
     {
-      image: HF,
-      title: "High Fever",
+      image: DigestiveHealth,
+      title: "Digestive Health",
       description: "High Fever Description",
       link: "/AddcartPage",
     },
     {
-      image: Dia,
-      title: "Diabetes",
+      image: FirstAid,
+      title: "First Aid",
       description: "Diabetes desciption",
       link: "/AddcartPage",
     },

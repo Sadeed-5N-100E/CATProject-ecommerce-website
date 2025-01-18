@@ -1,7 +1,6 @@
 import React, { useState ,useEffect} from 'react';
 import "./AddcartPage.css"
 import promo2 from "./assets/Promo2.jpg";
-import Dia from "./assets/DiaCategory.jpg";
 import Asp from "./assets/Asp.jpg";
 
 const MedicineCard = ({ medicine }) => {
@@ -47,8 +46,8 @@ const AddcartPage = () => {
           dosage: '500mg',
           brand: 'HealthCare',
           price: 10,
-          image: promo2,
-          number: "30 / pax",
+          image: Asp,
+          quantity: "30 / pax",
         },
         {
           name: 'Ibuprofen',
@@ -56,7 +55,7 @@ const AddcartPage = () => {
           dosage: '200mg',
           brand: 'MediSafe',
           price: 12,
-          image: Dia,
+          image: Asp,
           number: "30 / pax",
         },
         {
