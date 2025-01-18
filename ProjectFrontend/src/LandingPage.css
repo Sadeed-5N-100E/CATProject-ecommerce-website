@@ -206,6 +206,17 @@
   }
 }
 
+@media (max-width: 540px){
+
+  .main-nav ul{
+    gap: 0px;
+  }
+
+  .main-nav ul li a {
+    font-size: 24px;
+  }
+}
+
 .info-box {
   margin-top: 100px;
   position: absolute;

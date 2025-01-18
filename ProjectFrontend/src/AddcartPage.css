@@ -193,6 +193,17 @@ margin: 0 -.25rem;
   }
 }
 
+@media (max-width: 540px){
+
+  .Amain-nav ul{
+    gap: 0px;
+  }
+
+  .Amain-nav ul li a {
+    font-size: 26px;
+  }
+}
+
 /* Medicine Section */
 .medicine-section {
   margin-top: 120px;
