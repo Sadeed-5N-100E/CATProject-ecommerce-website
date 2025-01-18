@@ -1,18 +1,30 @@
-{
-    "users": [
-        {
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "johndoe@gmail.com",
-            "phoneNumber": "012-1234567",
-            "password": "jd123"
-        },
-        {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "janesmith@gmail.com",
-            "phoneNumber": "012-1234567",
-            "password": "js123"
-        }
-    ]
-}
+{"users": [
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "password": "jd123",
+        "phoneNumber": "012-1234567",
+        "email": "johndoe@gmail.com"
+    },
+    {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "password": "js123",
+        "phoneNumber": "012-1234567",
+        "email": "janesmith@gmail.com"
+    },
+    {
+        "firstName": "Hong Jack",
+        "lastName": "Yap",
+        "password": "hj123",
+        "phoneNumber": "012-8880909",
+        "email": "hongjack@gmail.com"
+    },
+    {
+        "firstName": "Shan Hang",
+        "lastName": "Tan",
+        "password": "sh123",
+        "phoneNumber": "010-9876543",
+        "email": "shanhang@gmail.com"
+    }
+]}
