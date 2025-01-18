@@ -1,7 +1,6 @@
 import React, { useState ,useEffect} from 'react';
 import "./AddcartPage.css"
 import promo2 from "./assets/Promo2.jpg";
-import Dia from "./assets/DiaCategory.jpg";
 import Asp from "./assets/Asp.jpg";
 
 const MedicineCard = ({ medicine }) => {
@@ -21,6 +20,7 @@ const MedicineCard = ({ medicine }) => {
           <p>Category: {medicine.category}</p>
           <p>Dosage: {medicine.dosage}</p>
           <p>Brand: {medicine.brand}</p>
+          <p>Quantity: {medicine.number}</p>
           <p>Price: ${medicine.price}</p>
           <div className="quantity-control">
             <button onClick={decreaseQuantity}>-</button>
@@ -46,7 +46,8 @@ const AddcartPage = () => {
           dosage: '500mg',
           brand: 'HealthCare',
           price: 10,
-          image: promo2,
+          image: Asp,
+          quantity: "30 / pax",
         },
         {
           name: 'Ibuprofen',
@@ -54,7 +55,8 @@ const AddcartPage = () => {
           dosage: '200mg',
           brand: 'MediSafe',
           price: 12,
-          image: Dia,
+          image: Asp,
+          number: "30 / pax",
         },
         {
           name: 'Amoxicillin',
@@ -63,6 +65,7 @@ const AddcartPage = () => {
           brand: 'PharmaPlus',
           price: 15,
           image: Asp,
+          number: "30 / pax",
         },
         {
           name: 'Cetirizine',
@@ -71,6 +74,7 @@ const AddcartPage = () => {
           brand: 'AllerCare',
           price: 8,
           image: Asp,
+          number: "30 / pax",
         },
         {
             name: 'Cetirizine',
@@ -79,6 +83,7 @@ const AddcartPage = () => {
             brand: 'AllerCare',
             price: 8,
             image: Asp,
+            number: "30 / pax",
           },
           {
             name: 'Cetirizine',
@@ -87,6 +92,7 @@ const AddcartPage = () => {
             brand: 'AllerCare',
             price: 8,
             image: Asp,
+            number: "30 / pax",
           },
       ];
   return (
