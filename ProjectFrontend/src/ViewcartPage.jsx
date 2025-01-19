@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Modal from 'react-modal'; // Import Modal
-import Asp from "./assets/Asp.jpg";
+import IGlogo from "./assets/IGlogo.png";
+import FBlogo from "./assets/fblogo.png";  
 import {Link} from "react-router-dom";
 import "./ViewcartPage.css"
 import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
@@ -137,6 +138,27 @@ const ViewcartPage = () => {
                     <button onClick={closeErrorPopup}>Close</button>
                 </div>
             )}
+
+                          {/* Footer Section */}
+                  <footer className="footer">
+                    <div className="footer-content">
+                      <div className="contact-info">
+                        <p>Email: RoyalPharmacy@gmail.com</p>
+                        <p>Address: 123 Pharmacy St, 08000, Malaysia</p>
+                        <p>Contact Number: +60 456 7890</p>
+                      </div>
+                      <div className="social-media">
+                        <div className="social-item">
+                          <img src={FBlogo} alt="Facebook" className="social-iconF" />
+                          <span>RoyalHarapanFB</span>
+                        </div>
+                        <div className="social-item">
+                          <img src={IGlogo} alt="Instagram" className="social-iconI" />
+                          <span>RoyalHarapanIG</span>
+                        </div>
+                      </div>
+                    </div>
+                  </footer>
         </>
     );
 };

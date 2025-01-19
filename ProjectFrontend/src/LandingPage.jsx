@@ -10,6 +10,8 @@ import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
 import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
 import { AuthContext } from './AuthContext';
 import Modal from './Modal';
+import IGlogo from "./assets/IGlogo.png";
+import FBlogo from "./assets/fblogo.png";  
 
 
 const LandingPage = () => {
@@ -131,6 +133,28 @@ const LandingPage = () => {
             ))}
             </div>
         </section>
+
+              {/* Footer Section */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="contact-info">
+            <p>Email: RoyalPharmacy@gmail.com</p>
+            <p>Address: 123 Pharmacy St, 08000, Malaysia</p>
+            <p>Contact Number: +60 456 7890</p>
+          </div>
+          <div className="social-media">
+            <div className="social-item">
+              <img src={FBlogo} alt="Facebook" className="social-iconF" />
+              <span>RoyalHarapanFB</span>
+            </div>
+            <div className="social-item">
+              <img src={IGlogo} alt="Instagram" className="social-iconI" />
+              <span>RoyalHarapanIG</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
       </>
   )
 }

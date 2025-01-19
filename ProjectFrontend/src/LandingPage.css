@@ -348,3 +348,69 @@
     position: relative; /* Required for z-index to work */
     z-index: 1000; /* Set a high z-index */
 }
+
+.footer {
+  background-color: #5c3bbf; /* Dimmer shade of #674cf2 */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Add spacing on the sides */
+  flex-wrap: wrap; /* Ensure responsiveness */
+  gap: 20px; /* Add spacing between elements */
+}
+
+.contact-info {
+  text-align: left; /* Align content to the left */
+  flex: 1; /* Allow flexible width */
+  padding-left: 20px; /* Add left padding to create a gap */
+}
+
+.contact-info p {
+  margin: 5px 0;
+  color: white; /* Ensure nested elements also have white text */
+
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.social-iconF {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.social-iconI {
+  width: 40px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-start; /* Align to the left */
+  }
+
+  .social-media {
+    justify-content: flex-start; /* Align icons to the left */
+  }
+}
