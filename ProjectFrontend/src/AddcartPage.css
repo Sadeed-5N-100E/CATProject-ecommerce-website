@@ -234,6 +234,8 @@ margin: 0 -.25rem;
   border-radius: 10px;
 }
 
+
+
 .medicine-details h3 {
   margin: 10px 0;
   font-size: 1.2rem;
@@ -254,7 +256,7 @@ margin: 0 -.25rem;
 .quantity-control button {
   background-color: #494949;
   color: white;
-  font-size: 16px;
+  font-size: 10px;
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -275,13 +277,14 @@ margin: 0 -.25rem;
 }
 
 .add-cart-btn {
-  margin-top: 10px;
+
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: -20px; /* Moves the button slightly to the left */
 }
 
 .add-cart-btn:hover {
@@ -304,4 +307,12 @@ margin: 0 -.25rem;
   .medicine-details {
     text-align: left; /* Center-align the details for a balanced look */
   }
+
+  .add-cart-btn {
+    margin-left: 0; /* Reset the left margin */
+    margin-top: 3px; /* Add some space from the elements above */
+    display: block; /* Ensure it's treated as a block element */
+    align-self: center; /* Center-align within the parent container */
+  }
+
 }

@@ -19,7 +19,7 @@ import org.json.JSONTokener;
 
 @WebServlet("/SignupServlet")
 public class SignupServlet extends HttpServlet {
-    private static final String USERS_FILE = "C:\\\\Users\\\\Jack\\\\Documents\\\\CAT201\\\\Project2\\\\CATProject-ecommerce-website\\\\ProjectBackend\\\\src\\\\main\\\\webapp\\\\data\\\\Users.json";
+    private static final String USERS_FILE = "C:\\Users\\Asus\\Documents\\CAT201\\Project\\CATProject-ecommerce-website\\ProjectBackend\\src\\main\\webapp\\data\\Users.json";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {

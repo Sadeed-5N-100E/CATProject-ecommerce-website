@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
             }
             
             // Use the absolute path to Users.json
-            String realPath = "C:\\Users\\Jack\\Documents\\CAT201\\Project2\\CATProject-ecommerce-website\\ProjectBackend\\src\\main\\webapp\\data\\Users.json";
+            String realPath = "C:\\Users\\Asus\\Documents\\CAT201\\Project\\CATProject-ecommerce-website\\ProjectBackend\\src\\main\\webapp\\data\\Users.json";
             File usersFile = new File(realPath);
             if (!usersFile.exists()) {
                 throw new FileNotFoundException("Users.json not found at: " + realPath);
