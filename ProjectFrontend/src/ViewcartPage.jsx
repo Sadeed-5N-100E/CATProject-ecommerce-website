@@ -84,59 +84,59 @@ const ViewcartPage = () => {
                     </button>
                 </div>
             </header>
-
-            <section className="Vcart-container">
-                <table className="Vcart-table">
-                    <thead>
-                        <tr>
-                            <th>Product Image</th>
-                            <th>Information</th>
-                            <th>Quantity</th>
-                            <th>Accumulated Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {cartItems.map((item) => (
-                            <tr key={item.id}>
-                                <td>
-                                    <img src={item.image} alt={item.name} className="Vproduct-image" />
-                                </td>
-                                <td>
-                                    <p><strong>Name:</strong> {item.name}</p>
-                                    <p><strong>Category:</strong> {item.category}</p>
-                                    <p><strong>Brand:</strong> {item.brand}</p>
-                                </td>
-                                <td>
-                                    <div className="Vquantity-control">
-                                        <button onClick={() => updateQuantity(item.id, false)}>-</button>
-                                        <span className="Vquantity-box">{item.quantity}</span>
-                                        <button onClick={() => updateQuantity(item.id, true)}>+</button>
-                                    </div>
-                                </td>
-                                <td>${(item.price * item.quantity).toFixed(2)}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colSpan="3" className="total-label">Total Price:</td>
-                            <td>${totalPrice.toFixed(2)}</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="4">
-                                <button className="Vcheckout-btn" onClick={handleCheckoutClick}>Checkout</button>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </section>
-
-            {showError && (
-                <div className="small-popup">
-                    <p>Your cart is empty. Please add items to your cart before checking out.</p>
-                    <button onClick={closeErrorPopup}>Close</button>
-                </div>
-            )}
+            <body className="Vcart-body">
+              <section className="Vcart-container">
+                  <table className="Vcart-table">
+                      <thead>
+                          <tr>
+                              <th>Product Image</th>
+                              <th>Information</th>
+                              <th>Quantity</th>
+                              <th>Accumulated Price</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {cartItems.map((item) => (
+                              <tr key={item.id}>
+                                  <td>
+                                      <img src={item.image} alt={item.name} className="Vproduct-image" />
+                                  </td>
+                                  <td>
+                                      <p><strong>Name:</strong> {item.name}</p>
+                                      <p><strong>Category:</strong> {item.category}</p>
+                                      <p><strong>Brand:</strong> {item.brand}</p>
+                                  </td>
+                                  <td>
+                                      <div className="Vquantity-control">
+                                          <button onClick={() => updateQuantity(item.id, false)}>-</button>
+                                          <span className="Vquantity-box">{item.quantity}</span>
+                                          <button onClick={() => updateQuantity(item.id, true)}>+</button>
+                                      </div>
+                                  </td>
+                                  <td>${(item.price * item.quantity).toFixed(2)}</td>
+                              </tr>
+                          ))}
+                      </tbody>
+                      <tfoot>
+                          <tr>
+                              <td colSpan="3" className="total-label">Total Price:</td>
+                              <td>${totalPrice.toFixed(2)}</td>
+                          </tr>
+                          <tr>
+                              <td colSpan="4">
+                                  <button className="Vcheckout-btn" onClick={handleCheckoutClick}>Checkout</button>
+                              </td>
+                          </tr>
+                      </tfoot>
+                  </table>
+              </section>
+            </body>
+            
+            <Modal isOpen={showError} onRequestClose={closeErrorPopup} contentLabel="Error">
+                <h2>Error</h2>
+                <p>Your cart is empty. Please add items to your cart before checking out.</p>
+                <button onClick={closeErrorPopup}>Close</button>
+            </Modal>
         </>
     );
 };

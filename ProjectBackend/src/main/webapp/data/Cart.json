@@ -1,9 +1,1 @@
-{"cart": [{
-    "image": "/Assets/DayquilCough.jpg",
-    "quantity": 1,
-    "price": 20,
-    "name": "Cough Suppressant",
-    "id": "CF002",
-    "category": "Cold and Flu",
-    "brand": "Dayquil"
-}]}
+{"cart":[]}

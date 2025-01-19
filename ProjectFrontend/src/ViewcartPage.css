@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
 
-html, body {
-    height: 100%; /* Ensure html and body take full height */
-    width: 100%; /* Ensure html and body take full width */
-    margin: 0; /* Remove default margin */
+.Vcart-body {
+  height: 100vh; /* Ensure html and body can stretch to full height */
+  width: 100%; /* Ensure html and body take full width */
+  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: column;
+  background: #cdc9f1;
 }
 
 .VCheader {
   /* background-color: #d3d3d3;  */
   background: #cdc9f1;
   position : relative;/* Make the header container relative */
-  height: 100%;  /* Full viewport height */
+  height: 15%;  /* Full viewport height */
   width: 100%;    /* Ensure full width */
   display: flex;
   flex-direction: column;
@@ -194,9 +197,9 @@ margin: 0 -.25rem;
 }
 
 .Vcart-container {
-  margin-top: calc(var(--overlay-height, 70px)); /* Use a CSS variable for dynamic height */
+  margin-top: 100px;
   padding: 20px;
-  background-color: #d0cff2;
+  background-color: #cdc9f1;
   width: calc(100% - var(--overlay-height, 40px));
   height: calc(100vh - var(--overlay-height, 100px)); /* Set height to full viewport height minus overlay */
   display: flex;
@@ -205,8 +208,7 @@ margin: 0 -.25rem;
 }
 
 .Vcart-table {
-  margin-top: 50px;
-  width: 90%;
+  width: 80%;
   border-collapse: collapse;
   margin-bottom: 20px;
   background: white;

@@ -1,4 +1,5 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import Modal from 'react-modal'; // Import react-modal
 import "./AddcartPage.css"
 import promo2 from "./assets/Promo2.jpg";
 import Asp from "./assets/Asp.jpg";
@@ -7,12 +8,16 @@ import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
 import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
 import medicinesData from '../../ProjectBackend/src/main/webapp/data/Medicines.json'; // Relative path
 
+// Set the app element for accessibility
+Modal.setAppElement('#root'); // Adjust this if your root element is different
+
 const AddcartPage = () => {
     const location = useLocation();
     const selectedCategory = location.state?.selectedCategory; // Get the selected category
     console.log("Selected Category:", selectedCategory); // Debugging line
     const [filteredMedicines, setFilteredMedicines] = useState([]);
     const [quantity, setQuantity] = useState(1); // Initialize quantity state
+    const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
     useEffect(() => {
         // Filter medicines based on the selected category
@@ -83,6 +88,8 @@ const AddcartPage = () => {
         .then(data => {
             if (data && data.message) {
                 console.log(data.message); // Log success message
+                setIsModalOpen(true); // Open the modal
+                setTimeout(() => setIsModalOpen(false),1000); // Close modal after 3 seconds
             } else {
                 console.error('Invalid data structure:', data);
             }
@@ -99,6 +106,17 @@ const AddcartPage = () => {
 
     return (
       <>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={() => setIsModalOpen(false)}
+        contentLabel="Success Modal"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2>Product added successfully!</h2>
+        <button onClick={() => setIsModalOpen(false)}>Close</button>
+      </Modal>
+
       <header className="Aheader">
       <div className="Aoverlay-box">
       <img src={PharmacyLogo} alt="Pharmacy Logo" className="ALogo"/>
