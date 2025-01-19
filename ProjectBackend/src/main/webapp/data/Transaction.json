@@ -1,0 +1,20 @@
+{"transaction": [
+    {
+        "expiryDate": "12/25",
+        "firstName": "John",
+        "lastName": "Doe",
+        "cvv": "123",
+        "totalPrice": 120.5,
+        "cardType": "Visa",
+        "cardNumber": "123456789123456"
+    },
+    {
+        "expiryDate": "12/30",
+        "firstName": "Hong Jack",
+        "lastName": "Yap",
+        "cvv": "133",
+        "totalPrice": 120.5,
+        "cardType": "Discover",
+        "cardNumber": "1818181818188787"
+    }
+]}
