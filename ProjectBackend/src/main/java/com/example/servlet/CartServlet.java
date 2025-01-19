@@ -12,7 +12,7 @@ import org.json.JSONTokener;
 
 @WebServlet("/CartServlet")
 public class CartServlet extends HttpServlet {
-    private static final String CART_FILE = "src/main/webapp/data/Cart.json";
+    private static final String CART_FILE = "C:\\Users\\Jack\\Documents\\CAT201\\Project2\\CATProject-ecommerce-website\\ProjectBackend\\src\\main\\webapp\\data\\Cart.json";
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
@@ -24,7 +24,7 @@ public class CartServlet extends HttpServlet {
         try {
             JSONArray cartItems = readCartItems();
             JSONObject jsonResponse = new JSONObject();
-            jsonResponse.put("cartItems", cartItems);
+            jsonResponse.put("cart", cartItems);
             out.print(jsonResponse.toString());
         } catch (Exception e) {
             handleError(response, e);
@@ -95,12 +95,12 @@ public class CartServlet extends HttpServlet {
         JSONTokener tokener = new JSONTokener(reader);
         JSONObject cartData = new JSONObject(tokener);
         reader.close();
-        return cartData.getJSONArray("cartItems");
+        return cartData.getJSONArray("cart");
     }
 
     private void writeCartItems(JSONArray cartItems) throws IOException {
         JSONObject cartData = new JSONObject();
-        cartData.put("cartItems", cartItems);
+        cartData.put("cart", cartItems);
         FileWriter writer = new FileWriter(CART_FILE);
         writer.write(cartData.toString(4));
         writer.close();
@@ -126,11 +126,12 @@ public class CartServlet extends HttpServlet {
     }
 
     private void handleError(HttpServletResponse response, Exception e) throws IOException {
-        e.printStackTrace();
         response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
         JSONObject jsonResponse = new JSONObject();
-        jsonResponse.put("status", "error");
         jsonResponse.put("message", e.getMessage());
-        response.getWriter().write(jsonResponse.toString());
+        jsonResponse.put("status", "error");
+        out.print(jsonResponse.toString());
     }
 }

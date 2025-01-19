@@ -23,6 +23,23 @@ const AddcartPage = () => {
             console.log("medicinesData Category:", medicinesData.category); // Debugging line
             setFilteredMedicines(filtered);
         }
+        fetch('http://localhost:8080/cat201project/AddcartServlet')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data && data.products) {
+                    setFilteredMedicines(data.products); // Ensure data.products exists
+                } else {
+                    console.error('Invalid data structure:', data);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching products:', error);
+            });
     }, [selectedCategory]);
 
     const decreaseQuantity = () => {
@@ -39,23 +56,39 @@ const AddcartPage = () => {
         setIsMenuOpen(!isMenuOpen); // Toggle the menu state
     };
 
-    const addToCart = (productId, quantity) => {
+    const addToCart = (medicine) => {
+        const cartItem = {
+            id: medicine.id,
+            name: medicine.name,
+            brand: medicine.brand,
+            category: medicine.category,
+            price: medicine.price,
+            image: medicine.image,
+            quantity: quantity, // Use the quantity state
+        };
+
         fetch('http://localhost:8080/cat201project/AddcartServlet', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json',
             },
-            body: new URLSearchParams({
-                productId: productId,
-                quantity: quantity,
-            }),
+            body: JSON.stringify(cartItem),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
-            console.log(data.message); // Handle success or error message
+            if (data && data.message) {
+                console.log(data.message); // Log success message
+            } else {
+                console.error('Invalid data structure:', data);
+            }
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.error('Error adding to cart:', error);
         });
     };
 
@@ -103,7 +136,7 @@ const AddcartPage = () => {
                               <button onClick={increaseQuantity}>+</button>
                           </div>
                         </div>
-                        <button className="add-cart-btn" onClick={() => addToCart(medicine.id, quantity)}>ADD CART</button>
+                        <button className="add-cart-btn" onClick={() => addToCart(medicine)}>ADD CART</button>
                     </div>
                 ))
             ) : (

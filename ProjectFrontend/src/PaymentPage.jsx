@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./PaymentPage.css";
 import axios from 'axios';
 
@@ -12,7 +12,9 @@ const PaymentPage = () => {
   const [cvv, setCvv] = useState("");
   const [errors, setErrors] = useState({});
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [totalPrice, setTotalPrice] = useState(120.5); // Example price
+  const location = useLocation();
+  const { totalPrice } = location.state || { totalPrice: 0 }; // Default to 0 if not passed
+  const [paymentStatus, setPaymentStatus] = useState('');
 
   const navigate = useNavigate();
 
@@ -65,6 +67,9 @@ const PaymentPage = () => {
             setIsPopupVisible(false);
             navigate("/LandingPage");
           }, 2000);
+
+          // Clear the cart after successful payment
+          await clearCart();
         } else {
           alert('Payment failed: ' + response.data.message);
         }
@@ -77,6 +82,20 @@ const PaymentPage = () => {
 
   const handleCancel = () => {
     navigate("/ViewCartPage");
+  };
+
+  const clearCart = async () => {
+    try {
+      await fetch('http://localhost:8080/cat201project/ClearCartServlet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log('Cart cleared successfully.');
+    } catch (error) {
+      console.error('Error clearing cart:', error);
+    }
   };
 
   return (
