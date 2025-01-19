@@ -49,10 +49,14 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   const handleCategoryClick = (link) => {
-    navigate(link); // Navigate to the new page
-    setTimeout(() => {
-      window.scrollTo(0, 0); // Scroll to the top after navigation
-    }, 100); // Ensure this happens after navigation
+    if (isLoggedIn) {
+        navigate(link); // Navigate to the new page
+        setTimeout(() => {
+            window.scrollTo(0, 0); // Scroll to the top after navigation
+        }, 100); // Ensure this happens after navigation
+    } else {
+        alert("Please login to access this page."); // Display message if not logged in
+    }
   };
 
   const infoParagraphs = [

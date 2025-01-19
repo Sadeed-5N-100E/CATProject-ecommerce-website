@@ -26,5 +26,12 @@
         "password": "sh123",
         "phoneNumber": "010-9876543",
         "email": "shanhang@gmail.com"
+    },
+    {
+        "firstName": "Ivan",
+        "lastName": "Tham",
+        "password": "Ivantham123",
+        "phoneNumber": "012-3148129",
+        "email": "Ivantham789@gmail.com"
     }
 ]}
