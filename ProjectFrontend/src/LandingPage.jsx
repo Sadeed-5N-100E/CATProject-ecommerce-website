@@ -9,10 +9,12 @@ import { useNavigate } from 'react-router-dom';
 import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
 import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
 import { AuthContext } from './AuthContext';
+import Modal from './Modal';
 
 
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [message, setMessage] = useState('');
   const { isLoggedIn } = useContext(AuthContext);
 
   const toggleMenu = () => {
@@ -48,15 +50,20 @@ const LandingPage = () => {
 
   const navigate = useNavigate();
 
-  const handleCategoryClick = (link) => {
+  const handleCategoryClick = (link, category) => {
     if (isLoggedIn) {
-        navigate(link); // Navigate to the new page
+        navigate(link, { state: { selectedCategory: category } }); // Pass the selected category
         setTimeout(() => {
-            window.scrollTo(0, 0); // Scroll to the top after navigation
-        }, 100); // Ensure this happens after navigation
+            window.scrollTo(0, 0);
+        }, 100);
+        setMessage('');
     } else {
-        alert("Please login to access this page."); // Display message if not logged in
+        setMessage("Login required to access this page.");
     }
+  };
+
+  const closeModal = () => {
+    setMessage('');
   };
 
   const infoParagraphs = [
@@ -66,7 +73,8 @@ const LandingPage = () => {
 
   return (
       <>
-      <header className="Lheader">
+        <Modal message={message} onClose={closeModal} />
+        <header className="Lheader">
           <div className="overlay-box">
       
           <img src={PharmacyLogo} alt="Pharmacy Logo" className="LPLogo"/>
@@ -112,7 +120,7 @@ const LandingPage = () => {
                   <p className="category-description">{category.description}</p>
                   <button
                     className="category-button"
-                    onClick={() => handleCategoryClick(category.link)} // Pass the category link to navigate
+                    onClick={() => handleCategoryClick(category.link, category.title)}
                   >
                       Check This Out
                   </button>

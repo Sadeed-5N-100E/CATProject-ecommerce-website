@@ -2,163 +2,163 @@
     "products": [
         {
             "id": "PR001",
-            "category": "painRelievers",
+            "category": "Pain relief",
             "name": "Aspirin",
             "brand": "Bayer",
             "price": 20.00,
             "dosageForm": "tablet",
             "quantity": "30 tablets",
-            "image": "./src/Assets/BayerAspirin.jpg"
+            "image": "/Assets/BayerAspirin.jpg"
         },
         {
             "id": "PR002",
-            "category": "painRelievers",
+            "category": "Pain relief",
             "name": "Aspirin",
             "brand": "Ecotrin",
             "price": 100.00,
             "dosageForm": "tablets",
             "quantity": "125 tablets",
-            "image": "./src/Assets/AcotrinAspirin.jpg"
+            "image": "/Assets/EcotrinAspirin.jpg"
         },
         {
             "id": "CF001",
-            "category": "coldAndFlu",
+            "category": "Cold and Flu",
             "name": "Cough Suppressant",
             "brand": "Nyquil",
             "price": 38.00,
             "dosageForm": "syrup",
             "quantity": "354ml",
-            "image": "./src/Assets/NyquilCough.jpg"
+            "image": "/Assets/NyquilCough.jpg"
         },
         {
             "id": "CF002",
-            "category": "coldAndFlu",
+            "category": "Cold and Flu",
             "name": "Cough Suppressant",
             "brand": "Dayquil",
             "price": 20.00,
             "dosageForm": "syrup",
             "quantity": "236ml",
-            "image": "./src/Assets/DayquilCough.jpg"
+            "image": "/Assets/DayquilCough.jpg"
         },
         {
             "id": "DH001",
-            "category": "digestiveHealth",
+            "category": "Digestive Health",
             "name": "Antacid",
             "brand": "Tums",
             "price": 80.00,
             "dosageForm": "tablet",
             "quantity": "160 tablets",
-            "image": "./src/Assets/TumsAntacid.jpg"
+            "image": "/Assets/TumsAntacid.jpg"
         },
         {
             "id": "DH002",
-            "category": "digestiveHealth",
+            "category": "Digestive Health",
             "name": "Antacid",
             "brand": "Rolaids",
             "price": 30.00,
             "dosageForm": "tablet",
             "quantity": "72 tablets",
-            "image": "./src/Assets/RolaidsAntacid.jpg"
+            "image": "/Assets/RolaidsAntacid.jpg"
         },
         {
             "id": "FA001",
-            "category": "firstAid",
+            "category": "First Aid",
             "name": "Burn Relief",
             "brand": "Neosporin",
             "price": 30.00,
             "quantity": "0.5 oz",
             "dosageForm": "ointment",
-            "image": "./src/Assets/NeospropinBurnRelief.jpg"
+            "image": "/Assets/NeospropinBurnRelief.jpg"
         },
         {
             "id": "FA002",
-            "category": "firstAid",
+            "category": "First Aid",
             "name": "Burn Relief",
             "brand": "Solarcaine",
             "price": 15.00,
             "quantity": "4.5 oz",
             "dosageForm": "spray",
-            "image": "./src/Assets/SolarcaineBurnRelief.jpeg"
+            "image": "/Assets/SolarcaineBurnRelief.jpeg"
         },
         {
             "id": "PR003",
-            "category": "painRelievers",
+            "category": "Pain relief",
             "name": "Ibuprofin",
             "brand": "Advil",
             "price": 15.00,
             "dosageForm": "tablet",
             "quantity": "24 tablets",
-            "image": "./src/Asstes/AdvilIbuprofin.jpg"
+            "image": "/Assets/AdvilIbuprofin.jpg"
         },
         {
             "id": "PR004",
-            "category": "painRelievers",
+            "category": "Pain relief",
             "name": "Ibuprofin",
             "brand": "Motrin",
             "price": 60.00,
             "dosageForm": "tablet",
             "quantity": "100 tablets",
-            "image": "./src/Assets/MotrinIbuprofin.jpg"
+            "image": "/Assets/MotrinIbuprofin.jpg"
         },
         {
             "id": "CF003",
-            "category": "coldAndFlu",
+            "category": "Cold and Flu",
             "name": "Cold and Flu Relief",
             "brand": "Mucinex",
             "price": 18.00,
             "dosageForm": "syrup",
             "quantity": "180ml",
-            "image": "./src/Assets/MucinexColdnFlu.jpg"
+            "image": "/Assets/MucinexColdnFlu.jpg"
         },
         {
             "id": "CF004",
-            "category": "coldAndFlu",
+            "category": "Cold and Flu",
             "name": "Cold and Flu Relief",
             "brand": "Tylenol",
             "price": 60.00,
             "dosageForm": "syrup",
             "quantity": "240ml each",
-            "image": "./src/Assets/TylenolColdnFlu.jpg"
+            "image": "/Assets/TylenolColdnFlu.jpg"
         },
         {
             "id": "DH003",
-            "category": "digestiveHealth",
+            "category": "Digestive Health",
             "name": "Famotidine (Reduces Stomach Acid)",
             "brand": "Pepcid",
             "price": 15.00,
             "dosageForm": "tablet",
             "quantity": "20 tablets",
-            "image": "./src/Assets/PepcidH2Blocker.png"
+            "image": "/Assets/PepcidH2Blocker.png"
         },
         {
             "id": "DH004",
-            "category": "digestiveHealth",
+            "category": "Digestive Health",
             "name": "Famotidine (Reduces Stomach Acid)",
             "brand": "Zantac",
             "price": 30.00,
             "dosageForm": "tablet",
             "quantity": "50 tablets",
-            "image": "./src/Assets/ZantacFamotidine.jpg"
+            "image": "/Assets/ZantacFamotidine.jpg"
         },
         {
             "id": "FA003",
-            "category": "firstAid",
+            "category": "First Aid",
             "name": "Allergy Relief",
             "brand": "Benadryl",
             "price": 30.00,
             "quantity": "24 tablets",
             "dosageForm": "tablet",
-            "image": "./src/Assets/BenadrylAllergyRelief.jpg"
+            "image": "/Assets/BenadrylAllergyRelief.jpg"
         },
         {
             "id": "FA004",
-            "category": "firstAid",
+            "category": "First Aid",
             "name": "Allergy Relief",
             "brand": "Zyrtec",
             "price": 12.00,
             "quantity": "7 tablets",
             "dosageForm": "tablet",
-            "image": "./src/Assets/ZyrtecAllergyRelief.jpg"
+            "image": "/Assets/ZyrtecAllergyRelief.jpg"
         }
     ]
 }

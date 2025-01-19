@@ -335,4 +335,12 @@
   
   .category-button:hover {
     background-color: #4b33c3;
-  } 
+  }
+
+.message {
+    color: red; /* Change color to make it visible */
+    margin: 10px 0; /* Add some spacing */
+    display: block; /* Ensure it is displayed */
+    position: relative; /* Required for z-index to work */
+    z-index: 1000; /* Set a high z-index */
+}

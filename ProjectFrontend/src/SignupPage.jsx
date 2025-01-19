@@ -41,6 +41,10 @@ const SignupPage = () => {
     }
   };
 
+  const handleBackToLogin = () => {
+    navigate('/LoginPage'); // Redirect to the login page
+  };
+
   return (
     <div className="SignupBG">
       <article className="SignupArticle">
@@ -76,6 +80,7 @@ const SignupPage = () => {
             />
           </label>
           <button type="submit">Sign Up</button>
+          <button onClick={handleBackToLogin}>Back</button>
           {errorMessage && <p className="error">{errorMessage}</p>}
         </form>
       </article>
