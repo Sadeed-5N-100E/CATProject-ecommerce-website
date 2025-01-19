@@ -220,7 +220,7 @@
 .info-box {
   margin-top: 100px;
   position: absolute;
-  top: 80px;
+  top: 20%;
   left: 10%;
   width: 80%;
   background-color: rgba(255, 255, 255, 0.7);

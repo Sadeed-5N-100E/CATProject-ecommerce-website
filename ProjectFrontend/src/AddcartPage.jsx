@@ -5,7 +5,7 @@ import Asp from "./assets/Asp.jpg";
 import { Link, useLocation } from 'react-router-dom';
 import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
 import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
-import medicinesData from 'C:/Users/Jack/Documents/CAT201/Project2/CATProject-ecommerce-website/ProjectBackend/src/main/webapp/data/Medicines.json'; // Adjust the path as necessary
+import medicinesData from '../../ProjectBackend/src/main/webapp/data/Medicines.json'; // Relative path
 
 const AddcartPage = () => {
     const location = useLocation();
