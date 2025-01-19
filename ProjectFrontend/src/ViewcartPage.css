@@ -285,7 +285,23 @@ margin: 0 -.25rem;
   margin-top: 10px;
 }
 
+.Vclear-cart-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
 .Vcheckout-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.Vclear-cart-btn:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }

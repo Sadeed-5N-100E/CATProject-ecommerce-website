@@ -40,6 +40,21 @@ const ViewcartPage = () => {
         }
     };
 
+    const clearCart = async () => {
+      try {
+        await fetch('http://localhost:8080/cat201project/ClearCartServlet', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        console.log('Cart cleared successfully.');
+        navigate('/LandingPage');
+      } catch (error) {
+        console.error('Error clearing cart:', error);
+      }
+    };
+
     const closeErrorPopup = () => {
         setShowError(false);
     };
@@ -126,6 +141,7 @@ const ViewcartPage = () => {
                           <tr>
                               <td colSpan="4">
                                   <button className="Vcheckout-btn" onClick={handleCheckoutClick}>Checkout</button>
+                                  <button className="Vclear-cart-btn" onClick={clearCart}>Clear Cart</button>
                               </td>
                           </tr>
                       </tfoot>
@@ -139,58 +155,6 @@ const ViewcartPage = () => {
                 <button onClick={closeErrorPopup}>Close</button>
             </Modal>
 
-            <section className="Vcart-container">
-                <table className="Vcart-table">
-                    <thead>
-                        <tr>
-                            <th>Product Image</th>
-                            <th>Information</th>
-                            <th>Quantity</th>
-                            <th>Accumulated Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {cartItems.map((item) => (
-                            <tr key={item.id}>
-                                <td>
-                                    <img src={item.image} alt={item.name} className="Vproduct-image" />
-                                </td>
-                                <td>
-                                    <p><strong>Name:</strong> {item.name}</p>
-                                    <p><strong>Category:</strong> {item.category}</p>
-                                    <p><strong>Brand:</strong> {item.brand}</p>
-                                </td>
-                                <td>
-                                    <div className="Vquantity-control">
-                                        <button onClick={() => updateQuantity(item.id, false)}>-</button>
-                                        <span className="Vquantity-box">{item.quantity}</span>
-                                        <button onClick={() => updateQuantity(item.id, true)}>+</button>
-                                    </div>
-                                </td>
-                                <td>${(item.price * item.quantity).toFixed(2)}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colSpan="3" className="total-label">Total Price:</td>
-                            <td>${totalPrice.toFixed(2)}</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="4">
-                                <button className="Vcheckout-btn" onClick={handleCheckoutClick}>Checkout</button>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </section>
-
-            {showError && (
-                <div className="small-popup">
-                    <p>Your cart is empty. Please add items to your cart before checking out.</p>
-                    <button onClick={closeErrorPopup}>Close</button>
-                </div>
-            )}
 
                           {/* Footer Section */}
                   <footer className="footer">
