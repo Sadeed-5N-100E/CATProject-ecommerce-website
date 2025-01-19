@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal'; // Import react-modal
 import "./AddcartPage.css"
-import promo2 from "./assets/Promo2.jpg";
-import Asp from "./assets/Asp.jpg";
+import IGlogo from "./assets/IGlogo.png";
+import FBlogo from "./assets/fblogo.png";  
 import { Link, useLocation } from 'react-router-dom';
 import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
 import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
@@ -162,101 +162,27 @@ const AddcartPage = () => {
     
       </section>
       </header>
-    
+            <footer className="footer">
+              <div className="footer-content">
+                <div className="contact-info">
+                  <p>Email: RoyalPharmacy@gmail.com</p>
+                  <p>Address: 123 Pharmacy St, 08000, Malaysia</p>
+                  <p>Contact Number: +60 456 7890</p>
+                </div>
+                <div className="social-media">
+                  <div className="social-item">
+                    <img src={FBlogo} alt="Facebook" className="social-iconF" />
+                    <span>RoyalHarapanFB</span>
+                  </div>
+                  <div className="social-item">
+                    <img src={IGlogo} alt="Instagram" className="social-iconI" />
+                    <span>RoyalHarapanIG</span>
+                  </div>
+                </div>
+              </div>
+            </footer>
       </>
     );
   };
 
-//const AddcartPage = () => {
-//    const location = useLocation();
-//     const selectedCategory = location.state?.selectedCategory;
-
-//     const [isMenuOpen, setIsMenuOpen] = useState(false);
-//     const toggleMenu = () => {
-//       setIsMenuOpen(!isMenuOpen);
-//       };
-//       const medicines = [
-//         {
-//           name: 'Paracetamol',
-//           category: 'Pain Relief',
-//           dosage: '500mg',
-//           brand: 'HealthCare',
-//           price: 10,
-//           image: Asp,
-//           quantity: "30 / pax",
-//         },
-//         {
-//           name: 'Ibuprofen',
-//           category: 'Anti-inflammatory',
-//           dosage: '200mg',
-//           brand: 'MediSafe',
-//           price: 12,
-//           image: Asp,
-//           number: "30 / pax",
-//         },
-//         {
-//           name: 'Amoxicillin',
-//           category: 'Antibiotic',
-//           dosage: '250mg',
-//           brand: 'PharmaPlus',
-//           price: 15,
-//           image: Asp,
-//           number: "30 / pax",
-//         },
-//         {
-//           name: 'Cetirizine',
-//           category: 'Allergy Relief',
-//           dosage: '10mg',
-//           brand: 'AllerCare',
-//           price: 8,
-//           image: Asp,
-//           number: "30 / pax",
-//         },
-//        {
-//            name: 'Cetirizine',
-//            category: 'Allergy Relief',
-//            dosage: '10mg',
-//            brand: 'AllerCare',
-//            price: 8,
-//            image: Asp,
-//            number: "30 / pax",
-//          },
-//          {
-//            name: 'Cetirizine',
-//            category: 'Allergy Relief',
-//            dosage: '10mg',
-//            brand: 'AllerCare',
-//            price: 8,
-//            image: Asp,
-//            number: "30 / pax",
-//          },
-//      ];
-//  return (
-//    <>
-//    <header className="Aheader">
-//    <div className="Aoverlay-box">
-//    <img src={PharmacyLogo} alt="Pharmacy Logo" className="ALogo"/>
-//    <img src={PharmacyLogoNoWords} alt="Pharmacy Logo No Words" className="ALogoNoWords"/>
-//      <nav className={`Amain-nav ${isMenuOpen ? 'open' : ''}`}>
-//          <ul>
-//              {/* <li><a href="/SignupPage">Sign Up</a></li> */}
-//              <li><Link to ="/LandingPage">Back to Main</Link></li>
-//              <li><Link to="/ViewCartPage">View Cart</Link></li>
-//          </ul>
-//      </nav>
-//      <button className="Ahamburger" onClick={toggleMenu}>
-//          <span className="bar"></span>
-//          <span className="bar"></span>
-//          <span className="bar"></span>
-//      </button>
-//    </div>
-//    <section className="medicine-section">
-//      {medicines.map((medicine, index) => (
-//        <MedicineCard key={index} medicine={medicine} />
-//      ))}
-//    </section>
-// </header>
-//    </>
-//  )
-//}
 export default AddcartPage;

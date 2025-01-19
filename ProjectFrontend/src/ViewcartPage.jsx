@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Modal from 'react-modal'; // Import Modal
-import Asp from "./assets/Asp.jpg";
+import IGlogo from "./assets/IGlogo.png";
+import FBlogo from "./assets/fblogo.png";  
 import {Link} from "react-router-dom";
 import "./ViewcartPage.css"
 import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
@@ -137,6 +138,80 @@ const ViewcartPage = () => {
                 <p>Your cart is empty. Please add items to your cart before checking out.</p>
                 <button onClick={closeErrorPopup}>Close</button>
             </Modal>
+
+            <section className="Vcart-container">
+                <table className="Vcart-table">
+                    <thead>
+                        <tr>
+                            <th>Product Image</th>
+                            <th>Information</th>
+                            <th>Quantity</th>
+                            <th>Accumulated Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {cartItems.map((item) => (
+                            <tr key={item.id}>
+                                <td>
+                                    <img src={item.image} alt={item.name} className="Vproduct-image" />
+                                </td>
+                                <td>
+                                    <p><strong>Name:</strong> {item.name}</p>
+                                    <p><strong>Category:</strong> {item.category}</p>
+                                    <p><strong>Brand:</strong> {item.brand}</p>
+                                </td>
+                                <td>
+                                    <div className="Vquantity-control">
+                                        <button onClick={() => updateQuantity(item.id, false)}>-</button>
+                                        <span className="Vquantity-box">{item.quantity}</span>
+                                        <button onClick={() => updateQuantity(item.id, true)}>+</button>
+                                    </div>
+                                </td>
+                                <td>${(item.price * item.quantity).toFixed(2)}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colSpan="3" className="total-label">Total Price:</td>
+                            <td>${totalPrice.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td colSpan="4">
+                                <button className="Vcheckout-btn" onClick={handleCheckoutClick}>Checkout</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            {showError && (
+                <div className="small-popup">
+                    <p>Your cart is empty. Please add items to your cart before checking out.</p>
+                    <button onClick={closeErrorPopup}>Close</button>
+                </div>
+            )}
+
+                          {/* Footer Section */}
+                  <footer className="footer">
+                    <div className="footer-content">
+                      <div className="contact-info">
+                        <p>Email: RoyalPharmacy@gmail.com</p>
+                        <p>Address: 123 Pharmacy St, 08000, Malaysia</p>
+                        <p>Contact Number: +60 456 7890</p>
+                      </div>
+                      <div className="social-media">
+                        <div className="social-item">
+                          <img src={FBlogo} alt="Facebook" className="social-iconF" />
+                          <span>RoyalHarapanFB</span>
+                        </div>
+                        <div className="social-item">
+                          <img src={IGlogo} alt="Instagram" className="social-iconI" />
+                          <span>RoyalHarapanIG</span>
+                        </div>
+                      </div>
+                    </div>
+                  </footer>
         </>
     );
 };
