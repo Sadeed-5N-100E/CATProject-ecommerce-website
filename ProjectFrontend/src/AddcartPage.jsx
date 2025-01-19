@@ -84,7 +84,6 @@ const AddcartPage = () => {
         </button>
       </div>
       <section className="medicine-section">
-        <div className="medicines-container">
             {filteredMedicines.length > 0 ? (
                 filteredMedicines.map(medicine => (
                     <div className="medicine-card" key={medicine.id}>
@@ -109,7 +108,7 @@ const AddcartPage = () => {
             ) : (
                 <p>No medicines found in this category.</p>
             )}
-        </div>
+    
       </section>
       </header>
     
