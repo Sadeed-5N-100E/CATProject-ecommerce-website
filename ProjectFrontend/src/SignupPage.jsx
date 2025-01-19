@@ -80,7 +80,7 @@ const SignupPage = () => {
             />
           </label>
           <button type="submit">Sign Up</button>
-          <button onClick={handleBackToLogin}>Back</button>
+          <button onClick={handleBackToLogin}>Log In</button>
           {errorMessage && <p className="error">{errorMessage}</p>}
         </form>
       </article>

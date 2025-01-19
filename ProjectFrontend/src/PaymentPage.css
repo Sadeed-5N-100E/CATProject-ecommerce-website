@@ -2,7 +2,7 @@
 
 .PPheader {
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   background-color: #cdc8f1;
   display: flex;
   justify-content: center;
@@ -12,10 +12,11 @@
 
 .paymentbox {
     position: relative;
-    height: 120vh;
+    height: 90vh;
     width: 50%;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
+    border-radius: 20px;
     text-align: center;
     box-sizing: border-box;
     min-height: 300px; /* Default minimum height */
@@ -24,12 +25,12 @@
 .paymentbox h1 {
     text-align: center;
     font-family: 'Ysabeau SC', sans-serif;
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 
 .paymentbox p {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 30px;
 }
 
@@ -40,10 +41,10 @@
 .card-selection select, .card-details input {
     left: 0%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 10px;
     width: 100%;
     border-radius: 5px;
-    margin-top: 5px;
+    margin-top: 3px;
     border: 1px solid #ccc;
 }
 
@@ -54,35 +55,35 @@
     text-align: left;
 }
 
-.payment-buttons {
-    margin-top: 30px;
-}
-
 .pay-button, .cancel-button {
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    margin: 10px;
+    margin-bottom: 10px;
 }
 
 .pay-button {
     background-color: #28a745;
     color: white;
+    border-radius: 20px;
 }
 
 .pay-button:hover {
     background-color: #218838;
+    transform: scale(1.05);
 }
 
 .cancel-button {
     background-color: #dc3545;
     color: white;
+    border-radius: 20px;
 }
 
 .cancel-button:hover {
     background-color: #c82333;
+    transform: scale(1.05);
 }
 
 /* Popup styles */

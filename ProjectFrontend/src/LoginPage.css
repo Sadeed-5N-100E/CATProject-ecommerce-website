@@ -109,6 +109,7 @@
 .LoginForm button:hover {
     background-color: #5ace60;
     color: black;
+    transform: scale(1.05);
 }
 
 .LoginForm .Signupbutton {
@@ -117,7 +118,7 @@
     color: white;
     font-size: 135%;
     font-weight: 700;
-    top: 15px;
+    top: 20px;
     border: none;
     border-radius: 60px;
     cursor: pointer;
@@ -132,6 +133,7 @@
 .LoginForm .Signupbutton:hover {
     background-color: #f9ce41;
     color: black;
+    transform: scale(1.05);
 }
 
 @media (max-width: 1024px) {

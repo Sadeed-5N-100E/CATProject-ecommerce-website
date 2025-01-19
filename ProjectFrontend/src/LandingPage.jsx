@@ -87,7 +87,9 @@ const LandingPage = () => {
                       <li><Link to="/LoginPage">Log in</Link></li>
                     </>
                   )}
-                  <li><Link to="/ViewCartPage">View Cart</Link></li>
+                  {isLoggedIn && (
+                    <li><Link to="/ViewCartPage">View Cart</Link></li>
+                  )}
               </ul>
           </nav>
           <button className="LPhamburger" onClick={toggleMenu}>

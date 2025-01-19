@@ -96,6 +96,7 @@
 .SignupForm button:hover {
     background-color: #5229cc;
     color: black;
+    transform: scale(1.05);
 }
 
 .SignupErrorText {

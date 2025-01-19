@@ -1,22 +1,26 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import Modal from 'react-modal'; // Import Modal
 import Asp from "./assets/Asp.jpg";
 import {Link} from "react-router-dom";
 import "./ViewcartPage.css"
 import PharmacyLogo from "./assets/LoginPageAssets/RoyalHarapanPharmacy.png";
 import PharmacyLogoNoWords from "./assets/LoginPageAssets/PharmacyLogo.png";
 
+Modal.setAppElement('#root'); // Set the app element for accessibility
+
 const ViewcartPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]); // Initialize cartItems
+    const [showError, setShowError] = useState(false); // State for error message
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
-    };
+        };
 
-    const updateQuantity = (id, increment) => {
-        setCartItems((prevItems) =>
-            prevItems.map((item) =>
+          const updateQuantity = (id, increment) => {
+            setCartItems((prevItems) =>
+              prevItems.map((item) =>
                 item.id === id
                     ? { ...item, quantity: Math.max(0, item.quantity + (increment ? 1 : -1)) }
                     : item
@@ -27,8 +31,16 @@ const ViewcartPage = () => {
     const navigate = useNavigate();
 
     const handleCheckoutClick = () => {
-        const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        navigate('/PaymentPage', { state: { totalPrice } }); // Pass totalPrice to PaymentPage
+        if (cartItems.length === 0) {
+            setShowError(true); // Show error if cart is empty
+        } else {
+            const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            navigate('/PaymentPage', { state: { totalPrice } }); // Pass totalPrice to PaymentPage
+        }
+    };
+
+    const closeErrorPopup = () => {
+        setShowError(false);
     };
 
     useEffect(() => {
@@ -118,6 +130,13 @@ const ViewcartPage = () => {
                     </tfoot>
                 </table>
             </section>
+
+            {showError && (
+                <div className="small-popup">
+                    <p>Your cart is empty. Please add items to your cart before checking out.</p>
+                    <button onClick={closeErrorPopup}>Close</button>
+                </div>
+            )}
         </>
     );
 };

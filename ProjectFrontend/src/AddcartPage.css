@@ -66,7 +66,7 @@ user-select: none;
 border-style: ridge;
 background-color: #4b33c3;
 height: 7%;
-border-radius: 5px;
+border-radius: 20px;
 position: fixed;
 right: 1%;
 display: flex;
@@ -95,6 +95,7 @@ margin: 0 20px;
 font-family: 'Ysabeau SC';
 color: white;
 text-decoration: none;
+border-radius: 10px;
 font-size: 1.8rem;
 font-weight: 700;
 transition: color 0.3s ease, box-shadow 0.3s ease;
@@ -217,7 +218,7 @@ margin: 0 -.25rem;
 .medicine-card {
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 20px;
   width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -250,7 +251,6 @@ margin: 0 -.25rem;
   align-items: center;
   margin-top: 10px;
   gap: 10px; /* Add spacing between elements */
-
 }
 
 .quantity-control button {
@@ -259,12 +259,13 @@ margin: 0 -.25rem;
   font-size: 10px;
   border: none;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 .quantity-control button:hover {
   background-color: #666;
+  transform: scale(1.05);
 }
 
 .quantity-control .quantity-box {
@@ -282,13 +283,14 @@ margin: 0 -.25rem;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   margin-left: -20px; /* Moves the button slightly to the left */
 }
 
 .add-cart-btn:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
